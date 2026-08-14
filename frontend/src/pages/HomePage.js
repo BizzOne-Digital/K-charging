@@ -36,11 +36,12 @@ const serviceIcons = {
 
 export default function HomePage() {
   const [services, setServices] = useState([]);
+  const [servicesLoading, setServicesLoading] = useState(true);
   const [testimonials, setTestimonials] = useState([]);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
-    api.get('/services').then(r => setServices(r.data)).catch(() => {});
+    api.get('/services').then(r => setServices(r.data)).catch(() => {}).finally(() => setServicesLoading(false));
     api.get('/testimonials').then(r => setTestimonials(r.data.slice(0, 3))).catch(() => {});
   }, []);
 
@@ -57,7 +58,7 @@ export default function HomePage() {
       <Navbar />
 
       {/* ===== HERO ===== */}
-      <section style={{
+      <section className="hero-section" style={{
         minHeight: '100vh',
         backgroundImage: 'linear-gradient(90deg, rgba(7,14,28,0.55) 0%, rgba(7,14,28,0.3) 55%, rgba(7,14,28,0.15) 100%), url(/hero.png)',
         backgroundSize: 'cover',
@@ -160,7 +161,15 @@ export default function HomePage() {
           </div>
         </div>
 
-        <style>{`@media(max-width:900px){section > div.container > div{grid-template-columns:1fr !important} .feature-grid{grid-template-columns:repeat(2,1fr) !important}}`}</style>
+        <style>{`
+          @media(max-width:900px){section > div.container > div{grid-template-columns:1fr !important} .feature-grid{grid-template-columns:repeat(2,1fr) !important}}
+          @media(max-width:768px){
+            .hero-section{
+              background-image: linear-gradient(180deg, rgba(7,14,28,0.6) 0%, rgba(7,14,28,0.45) 55%, rgba(7,14,28,0.75) 100%), url(/mobile-hero.png) !important;
+              background-position: center top !important;
+            }
+          }
+        `}</style>
       </section>
 
       <style>{`
@@ -179,7 +188,17 @@ export default function HomePage() {
             </p>
           </div>
           <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-            {services.map((service, i) => {
+            {servicesLoading && [...Array(6)].map((_, i) => (
+              <div key={i} style={{ background: '#fff', borderRadius: 16, padding: 32, border: '1px solid #e8ecf4' }}>
+                <div className="skeleton" style={{ width: 52, height: 52, borderRadius: 12, marginBottom: 20 }} />
+                <div className="skeleton" style={{ width: '70%', height: 20, borderRadius: 6, marginBottom: 14 }} />
+                <div className="skeleton" style={{ width: '100%', height: 14, borderRadius: 6, marginBottom: 8 }} />
+                <div className="skeleton" style={{ width: '85%', height: 14, borderRadius: 6, marginBottom: 24 }} />
+                <div className="skeleton" style={{ width: '60%', height: 14, borderRadius: 6, marginBottom: 8 }} />
+                <div className="skeleton" style={{ width: '50%', height: 14, borderRadius: 6 }} />
+              </div>
+            ))}
+            {!servicesLoading && services.map((service, i) => {
               const Icon = serviceIcons[service.title] || FiZap;
               return (
                 <div key={service._id} style={{
