@@ -29,8 +29,8 @@ export default function AdminLayout() {
       {/* Logo */}
       <div style={{ padding: '24px 20px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ width: 38, height: 38, background: '#f5a623', borderRadius: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-            <span style={{ color: '#0d1b2e', fontFamily: 'Space Grotesk', fontWeight: 800, fontSize: 18 }}>K</span>
+          <div style={{ width: 38, height: 38, background: '#1a7d3c', borderRadius: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+            <span style={{ color: '#fff', fontFamily: 'Space Grotesk', fontWeight: 800, fontSize: 18 }}>K</span>
           </div>
           <div>
             <div style={{ color: '#fff', fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: 13, lineHeight: 1 }}>K CHARGING</div>
@@ -47,8 +47,8 @@ export default function AdminLayout() {
             style={({ isActive }) => ({
               display: 'flex', alignItems: 'center', gap: 12, padding: '11px 12px',
               borderRadius: 10, marginBottom: 2, fontSize: 14, fontWeight: 500,
-              color: isActive ? '#0d1b2e' : 'rgba(255,255,255,0.65)',
-              background: isActive ? '#f5a623' : 'transparent',
+              color: isActive ? '#0b3d24' : 'rgba(255,255,255,0.65)',
+              background: isActive ? '#1a7d3c' : 'transparent',
               transition: 'all 0.2s',
             })}
             onMouseEnter={e => { if (!e.currentTarget.classList.contains('active')) e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; }}
@@ -64,7 +64,7 @@ export default function AdminLayout() {
       {/* User section */}
       <div style={{ padding: '16px 12px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', marginBottom: 4 }}>
-          <div style={{ width: 34, height: 34, borderRadius: '50%', background: 'linear-gradient(135deg, #f5a623, #ffd06e)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 700, color: '#0d1b2e', flexShrink: 0 }}>
+          <div style={{ width: 34, height: 34, borderRadius: '50%', background: 'linear-gradient(135deg, #1a7d3c, #4ade80)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 700, color: '#fff', flexShrink: 0 }}>
             {user?.name?.charAt(0) || 'A'}
           </div>
           <div style={{ flex: 1, overflow: 'hidden' }}>
@@ -85,7 +85,7 @@ export default function AdminLayout() {
   return (
     <div style={{ display: 'flex', minHeight: '100vh', background: '#f8f9fc' }}>
       {/* Desktop Sidebar */}
-      <div style={{ width: 240, background: '#0d1b2e', position: 'fixed', left: 0, top: 0, bottom: 0, zIndex: 100, overflowY: 'auto' }} className="admin-sidebar">
+      <div style={{ width: 240, background: '#0b3d24', position: 'fixed', left: 0, top: 0, bottom: 0, zIndex: 100, overflowY: 'auto' }} className="admin-sidebar">
         {sidebarContent}
       </div>
 
@@ -93,7 +93,7 @@ export default function AdminLayout() {
       {sidebarOpen && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 200 }}>
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.5)' }} onClick={() => setSidebarOpen(false)} />
-          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 260, background: '#0d1b2e', zIndex: 1 }}>
+          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 260, background: '#0b3d24', zIndex: 1 }}>
             <button onClick={() => setSidebarOpen(false)} style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}><FiX size={22} /></button>
             {sidebarContent}
           </div>
@@ -103,7 +103,7 @@ export default function AdminLayout() {
       {/* Main Content */}
       <div style={{ marginLeft: 240, flex: 1, minHeight: '100vh' }} className="admin-content">
         {/* Mobile topbar */}
-        <div style={{ display: 'none', alignItems: 'center', padding: '16px', background: '#0d1b2e', borderBottom: '1px solid rgba(255,255,255,0.06)' }} className="admin-topbar">
+        <div style={{ display: 'none', alignItems: 'center', padding: '16px', background: '#0b3d24', borderBottom: '1px solid rgba(255,255,255,0.06)' }} className="admin-topbar">
           <button onClick={() => setSidebarOpen(true)} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', marginRight: 16 }}><FiMenu size={22} /></button>
           <span style={{ color: '#fff', fontFamily: 'Space Grotesk', fontWeight: 700 }}>K Charging Admin</span>
         </div>

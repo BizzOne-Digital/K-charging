@@ -60,7 +60,7 @@ export default function AdminMessages() {
     <div style={{ padding: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28 }}>
         <div>
-          <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0d1b2e', marginBottom: 4 }}>
+          <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0b3d24', marginBottom: 4 }}>
             Messages
             {unreadCount > 0 && (
               <span style={{ marginLeft: 12, background: '#ef4444', color: '#fff', fontSize: 13, fontWeight: 700, padding: '2px 10px', borderRadius: 100 }}>
@@ -85,8 +85,8 @@ export default function AdminMessages() {
             <div style={{ display: 'flex', gap: 6 }}>
               {[['', 'All'], ['false', 'Unread'], ['true', 'Read']].map(([val, label]) => (
                 <button key={val} onClick={() => setFilterRead(val)} style={{
-                  flex: 1, padding: '6px', borderRadius: 8, border: `1px solid ${filterRead === val ? '#0d1b2e' : '#e8ecf4'}`,
-                  background: filterRead === val ? '#0d1b2e' : '#fff', color: filterRead === val ? '#fff' : '#64748b',
+                  flex: 1, padding: '6px', borderRadius: 8, border: `1px solid ${filterRead === val ? '#0b3d24' : '#e8ecf4'}`,
+                  background: filterRead === val ? '#0b3d24' : '#fff', color: filterRead === val ? '#fff' : '#64748b',
                   fontSize: 12, fontWeight: 500, cursor: 'pointer',
                 }}>{label}</button>
               ))}
@@ -106,11 +106,11 @@ export default function AdminMessages() {
               <div key={msg._id} onClick={() => openMessage(msg)} style={{
                 padding: '16px 18px', borderBottom: '1px solid #f1f5f9', cursor: 'pointer',
                 background: selected?._id === msg._id ? '#f0f4ff' : (!msg.isRead ? '#fffbf0' : '#fff'),
-                borderLeft: `3px solid ${selected?._id === msg._id ? '#3d7fff' : (!msg.isRead ? '#f5a623' : 'transparent')}`,
+                borderLeft: `3px solid ${selected?._id === msg._id ? '#2f9e55' : (!msg.isRead ? '#1a7d3c' : 'transparent')}`,
                 transition: 'background 0.15s',
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
-                  <div style={{ fontSize: 14, fontWeight: msg.isRead ? 500 : 700, color: '#0d1b2e', flex: 1 }}>{msg.name}</div>
+                  <div style={{ fontSize: 14, fontWeight: msg.isRead ? 500 : 700, color: '#0b3d24', flex: 1 }}>{msg.name}</div>
                   <div style={{ fontSize: 11, color: '#94a3b8', flexShrink: 0, marginLeft: 8 }}>{new Date(msg.createdAt).toLocaleDateString()}</div>
                 </div>
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>{msg.email}</div>
@@ -118,7 +118,7 @@ export default function AdminMessages() {
                   {msg.subject || msg.message}
                 </div>
                 {!msg.isRead && (
-                  <div style={{ display: 'inline-block', width: 7, height: 7, borderRadius: '50%', background: '#f5a623', marginTop: 6 }} />
+                  <div style={{ display: 'inline-block', width: 7, height: 7, borderRadius: '50%', background: '#1a7d3c', marginTop: 6 }} />
                 )}
               </div>
             ))}
@@ -137,7 +137,7 @@ export default function AdminMessages() {
               {/* Header */}
               <div style={{ padding: '20px 24px', borderBottom: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                  <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 17, color: '#0d1b2e', marginBottom: 4 }}>
+                  <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 17, color: '#0b3d24', marginBottom: 4 }}>
                     {selected.subject || 'No Subject'}
                   </h3>
                   <div style={{ fontSize: 13, color: '#94a3b8' }}>{new Date(selected.createdAt).toLocaleString()}</div>
@@ -163,7 +163,7 @@ export default function AdminMessages() {
                 ].map(item => (
                   <div key={item.label}>
                     <div style={{ fontSize: 11, fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>{item.label}</div>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: '#0d1b2e' }}>{item.value}</div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: '#0b3d24' }}>{item.value}</div>
                   </div>
                 ))}
               </div>
@@ -179,7 +179,7 @@ export default function AdminMessages() {
                   <FiMail size={15} /> Reply via Email
                 </a>
                 {selected.phone && (
-                  <a href={`tel:${selected.phone}`} className="btn" style={{ background: '#f8f9fc', color: '#0d1b2e', border: '1px solid #e8ecf4', fontSize: 14, padding: '10px 20px' }}>
+                  <a href={`tel:${selected.phone}`} className="btn" style={{ background: '#f8f9fc', color: '#0b3d24', border: '1px solid #e8ecf4', fontSize: 14, padding: '10px 20px' }}>
                     <FiPhone size={15} /> Call
                   </a>
                 )}

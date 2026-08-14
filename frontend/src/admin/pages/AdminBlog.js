@@ -65,7 +65,7 @@ export default function AdminBlog() {
     <div style={{ padding: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28 }}>
         <div>
-          <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0d1b2e', marginBottom: 4 }}>Blog & News</h1>
+          <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0b3d24', marginBottom: 4 }}>Blog & News</h1>
           <p style={{ color: '#94a3b8', fontSize: 14 }}>{posts.filter(p => p.isPublished).length} published, {posts.filter(p => !p.isPublished).length} drafts</p>
         </div>
         <button onClick={openAdd} className="btn btn-primary"><FiPlus size={16} /> New Post</button>
@@ -94,7 +94,7 @@ export default function AdminBlog() {
               {posts.map((p, i) => (
                 <tr key={p._id} style={{ borderTop: '1px solid #f1f5f9', background: i % 2 === 0 ? '#fff' : '#fafbfc' }}>
                   <td style={{ padding: '14px 16px' }}>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: '#0d1b2e', maxWidth: 260, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.title}</div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: '#0b3d24', maxWidth: 260, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.title}</div>
                     {p.excerpt && <div style={{ fontSize: 12, color: '#94a3b8', maxWidth: 260, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.excerpt}</div>}
                   </td>
                   <td style={{ padding: '14px 16px' }}>
@@ -103,7 +103,7 @@ export default function AdminBlog() {
                   <td style={{ padding: '14px 16px', fontSize: 13, color: '#475569' }}>{p.author?.name || 'Admin'}</td>
                   <td style={{ padding: '14px 16px', fontSize: 13, color: '#94a3b8' }}>{p.views || 0}</td>
                   <td style={{ padding: '14px 16px' }}>
-                    <span style={{ padding: '4px 12px', borderRadius: 100, fontSize: 12, fontWeight: 600, background: p.isPublished ? 'rgba(34,197,94,0.1)' : 'rgba(245,166,35,0.1)', color: p.isPublished ? '#22c55e' : '#f59e0b' }}>
+                    <span style={{ padding: '4px 12px', borderRadius: 100, fontSize: 12, fontWeight: 600, background: p.isPublished ? 'rgba(34,197,94,0.1)' : 'rgba(26,125,60,0.1)', color: p.isPublished ? '#22c55e' : '#f59e0b' }}>
                       {p.isPublished ? 'Published' : 'Draft'}
                     </span>
                   </td>
@@ -116,7 +116,7 @@ export default function AdminBlog() {
                         style={{ padding: '6px 8px', borderRadius: 8, border: '1px solid #e8ecf4', background: '#fff', cursor: 'pointer', color: p.isPublished ? '#f59e0b' : '#22c55e' }}>
                         {p.isPublished ? <FiEyeOff size={14} /> : <FiEye size={14} />}
                       </button>
-                      <button onClick={() => openEdit(p)} style={{ padding: '6px 8px', borderRadius: 8, border: '1px solid #e8ecf4', background: '#fff', cursor: 'pointer', color: '#3d7fff' }}>
+                      <button onClick={() => openEdit(p)} style={{ padding: '6px 8px', borderRadius: 8, border: '1px solid #e8ecf4', background: '#fff', cursor: 'pointer', color: '#2f9e55' }}>
                         <FiEdit2 size={14} />
                       </button>
                       <button onClick={() => deletePost(p._id)} style={{ padding: '6px 8px', borderRadius: 8, border: '1px solid #fee2e2', background: '#fff', cursor: 'pointer', color: '#ef4444' }}>
@@ -136,7 +136,7 @@ export default function AdminBlog() {
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}>
           <div style={{ background: '#fff', borderRadius: 20, width: '100%', maxWidth: 760, maxHeight: '92vh', overflowY: 'auto' }}>
             <div style={{ padding: '24px 28px', borderBottom: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: '#fff', zIndex: 1 }}>
-              <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0d1b2e' }}>{editId ? 'Edit Post' : 'New Blog Post'}</h3>
+              <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0b3d24' }}>{editId ? 'Edit Post' : 'New Blog Post'}</h3>
               <button onClick={() => setShowModal(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#94a3b8' }}><FiX size={22} /></button>
             </div>
             <form onSubmit={handleSubmit} style={{ padding: '24px 28px' }}>
@@ -173,7 +173,7 @@ export default function AdminBlog() {
                 <input type="file" accept="image/*" onChange={e => setCoverImage(e.target.files[0])}
                   style={{ width: '100%', padding: '10px 14px', borderRadius: 10, border: '1px solid #e8ecf4', fontSize: 14 }} />
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24, padding: '14px 16px', background: form.isPublished ? 'rgba(34,197,94,0.06)' : 'rgba(245,166,35,0.06)', borderRadius: 10, border: `1px solid ${form.isPublished ? 'rgba(34,197,94,0.2)' : 'rgba(245,166,35,0.2)'}` }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24, padding: '14px 16px', background: form.isPublished ? 'rgba(34,197,94,0.06)' : 'rgba(26,125,60,0.06)', borderRadius: 10, border: `1px solid ${form.isPublished ? 'rgba(34,197,94,0.2)' : 'rgba(26,125,60,0.2)'}` }}>
                 <input type="checkbox" id="isPublished" checked={form.isPublished} onChange={e => setForm({ ...form, isPublished: e.target.checked })} style={{ width: 16, height: 16 }} />
                 <label htmlFor="isPublished" style={{ fontSize: 14, fontWeight: 600, color: form.isPublished ? '#22c55e' : '#f59e0b', cursor: 'pointer' }}>
                   {form.isPublished ? '✓ Publish immediately (visible on website)' : '○ Save as Draft (not visible yet)'}

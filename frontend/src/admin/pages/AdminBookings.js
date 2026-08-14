@@ -3,7 +3,7 @@ import api from '../../utils/api';
 import toast from 'react-hot-toast';
 import { FiCalendar, FiSearch, FiTrash2, FiMail, FiPhone, FiFilter } from 'react-icons/fi';
 
-const statusColors = { pending: '#f59e0b', confirmed: '#22c55e', completed: '#3d7fff', cancelled: '#ef4444' };
+const statusColors = { pending: '#f59e0b', confirmed: '#22c55e', completed: '#2f9e55', cancelled: '#ef4444' };
 
 export default function AdminBookings() {
   const [bookings, setBookings] = useState([]);
@@ -54,7 +54,7 @@ export default function AdminBookings() {
     <div style={{ padding: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28 }}>
         <div>
-          <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0d1b2e', marginBottom: 4 }}>Bookings</h1>
+          <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0b3d24', marginBottom: 4 }}>Bookings</h1>
           <p style={{ color: '#94a3b8', fontSize: 14 }}>{total} total consultation requests</p>
         </div>
       </div>
@@ -69,8 +69,8 @@ export default function AdminBookings() {
         <div style={{ display: 'flex', gap: 8 }}>
           {['', 'pending', 'confirmed', 'completed', 'cancelled'].map(s => (
             <button key={s} onClick={() => setFilter(s)} style={{
-              padding: '10px 16px', borderRadius: 10, border: `1px solid ${filter === s ? '#0d1b2e' : '#e8ecf4'}`,
-              background: filter === s ? '#0d1b2e' : '#fff', color: filter === s ? '#fff' : '#64748b',
+              padding: '10px 16px', borderRadius: 10, border: `1px solid ${filter === s ? '#0b3d24' : '#e8ecf4'}`,
+              background: filter === s ? '#0b3d24' : '#fff', color: filter === s ? '#fff' : '#64748b',
               fontSize: 13, fontWeight: 500, cursor: 'pointer', textTransform: 'capitalize',
             }}>{s || 'All'}</button>
           ))}
@@ -101,7 +101,7 @@ export default function AdminBookings() {
                   <tr key={b._id} style={{ borderTop: '1px solid #f1f5f9', cursor: 'pointer', background: i % 2 === 0 ? '#fff' : '#fafbfc' }}
                     onClick={() => setSelected(b)}>
                     <td style={{ padding: '14px 16px' }}>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: '#0d1b2e' }}>{b.name}</div>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: '#0b3d24' }}>{b.name}</div>
                       <div style={{ fontSize: 12, color: '#94a3b8' }}>{b.email}</div>
                     </td>
                     <td style={{ padding: '14px 16px', fontSize: 13, color: '#475569' }}>{b.service}</td>
@@ -128,7 +128,7 @@ export default function AdminBookings() {
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}>
           <div style={{ background: '#fff', borderRadius: 20, width: '100%', maxWidth: 560, maxHeight: '90vh', overflowY: 'auto' }}>
             <div style={{ padding: '24px 28px', borderBottom: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0d1b2e' }}>Booking Details</h3>
+              <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0b3d24' }}>Booking Details</h3>
               <button onClick={() => setSelected(null)} style={{ background: 'none', border: 'none', fontSize: 20, cursor: 'pointer', color: '#94a3b8' }}>×</button>
             </div>
             <div style={{ padding: '24px 28px' }}>
@@ -136,7 +136,7 @@ export default function AdminBookings() {
                 {[['Name', selected.name], ['Email', selected.email], ['Phone', selected.phone], ['Company', selected.company || '—'], ['Service', selected.service], ['Property Type', selected.propertyType || '—'], ['Chargers Needed', selected.chargersNeeded || '—'], ['Preferred Date', selected.preferredDate ? new Date(selected.preferredDate).toLocaleDateString() : '—']].map(([label, value]) => (
                   <div key={label}>
                     <div style={{ fontSize: 11, fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 4 }}>{label}</div>
-                    <div style={{ fontSize: 14, color: '#0d1b2e', fontWeight: 500 }}>{value}</div>
+                    <div style={{ fontSize: 14, color: '#0b3d24', fontWeight: 500 }}>{value}</div>
                   </div>
                 ))}
               </div>
@@ -162,7 +162,7 @@ export default function AdminBookings() {
                 <a href={`mailto:${selected.email}`} className="btn btn-dark" style={{ fontSize: 14, padding: '10px 20px' }}>
                   <FiMail size={14} /> Email Client
                 </a>
-                <a href={`tel:${selected.phone}`} className="btn" style={{ background: '#f8f9fc', color: '#0d1b2e', border: '1px solid #e8ecf4', fontSize: 14, padding: '10px 20px' }}>
+                <a href={`tel:${selected.phone}`} className="btn" style={{ background: '#f8f9fc', color: '#0b3d24', border: '1px solid #e8ecf4', fontSize: 14, padding: '10px 20px' }}>
                   <FiPhone size={14} /> Call
                 </a>
               </div>

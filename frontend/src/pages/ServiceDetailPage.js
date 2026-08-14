@@ -13,13 +13,13 @@ export default function ServiceDetailPage() {
   return (
     <div><Navbar />
       <div style={{paddingTop:76}}>
-        <div style={{background:'linear-gradient(135deg,#070e1c,#0d1b2e)',padding:'80px 0'}}>
+        <div style={{background:'linear-gradient(135deg,#052414,#0b3d24)',padding:'80px 0'}}>
           <div className="container"><h1 style={{fontFamily:'Space Grotesk',fontSize:'clamp(28px,4vw,50px)',color:'#fff',marginBottom:16}}>{service.title}</h1>
             <p style={{color:'rgba(255,255,255,0.6)',fontSize:17,maxWidth:580}}>{service.shortDescription}</p></div></div>
         <section className="section reveal"><div className="container" style={{maxWidth:800}}>
           <p style={{color:'#64748b',lineHeight:1.8,fontSize:16,marginBottom:32}}>{service.description}</p>
           {service.features?.length > 0 && (<div style={{background:'#f8f9fc',borderRadius:16,padding:32,marginBottom:32}}>
-            <h3 style={{fontFamily:'Space Grotesk',color:'#0d1b2e',marginBottom:20}}>What's Included</h3>
+            <h3 style={{fontFamily:'Space Grotesk',color:'#0b3d24',marginBottom:20}}>What's Included</h3>
             {service.features.map((f,i)=>(<div key={i} style={{display:'flex',gap:10,alignItems:'center',marginBottom:12}}><FiCheck size={16} color="#22c55e"/><span style={{fontSize:15,color:'#374151'}}>{f}</span></div>))}
           </div>)}
           <div style={{display:'flex',gap:16,flexWrap:'wrap'}}>

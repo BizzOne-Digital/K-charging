@@ -28,7 +28,7 @@ export default function BlogPage() {
     <div>
       <Navbar />
       <div style={{ paddingTop: 76 }}>
-        <div style={{ background: 'linear-gradient(135deg, #070e1c, #0d1b2e)', padding: '72px 0' }}>
+        <div style={{ background: 'linear-gradient(135deg, #052414, #0b3d24)', padding: '72px 0' }}>
           <div className="container" style={{ textAlign: 'center' }}>
             <div className="section-label" style={{ margin: '0 auto 16px', justifyContent: 'center' }}><FiTag size={12} /> Blog & News</div>
             <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(28px,4vw,48px)', color: '#fff', marginBottom: 16 }}>EV Charging Insights & News</h1>
@@ -39,8 +39,8 @@ export default function BlogPage() {
           <div className="container" style={{ display: 'flex', gap: 8, overflowX: 'auto' }}>
             {categories.map(cat => (
               <button key={cat} onClick={() => { setCategory(cat === 'All' ? '' : cat); setPage(1); }} style={{
-                padding: '8px 18px', borderRadius: 100, border: `1px solid ${(!category && cat === 'All') || category === cat ? '#0d1b2e' : '#e8ecf4'}`,
-                background: (!category && cat === 'All') || category === cat ? '#0d1b2e' : '#fff',
+                padding: '8px 18px', borderRadius: 100, border: `1px solid ${(!category && cat === 'All') || category === cat ? '#0b3d24' : '#e8ecf4'}`,
+                background: (!category && cat === 'All') || category === cat ? '#0b3d24' : '#fff',
                 color: (!category && cat === 'All') || category === cat ? '#fff' : '#64748b',
                 fontSize: 13, fontWeight: 500, cursor: 'pointer', whiteSpace: 'nowrap',
               }}>{cat}</button>
@@ -59,16 +59,16 @@ export default function BlogPage() {
                         onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.1)'; }}
                         onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}>
                         {post.coverImage ? <img src={post.coverImage} alt={post.title} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
-                          : <div style={{ width: '100%', height: 200, background: 'linear-gradient(135deg, #0d1b2e, #1a3050)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ fontSize: 40, fontWeight: 800, color: 'rgba(245,166,35,0.3)', fontFamily: 'Space Grotesk' }}>K</span></div>}
+                          : <div style={{ width: '100%', height: 200, background: 'linear-gradient(135deg, #0b3d24, #135c34)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ fontSize: 40, fontWeight: 800, color: 'rgba(26,125,60,0.3)', fontFamily: 'Space Grotesk' }}>K</span></div>}
                         <div style={{ padding: 24 }}>
                           <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 12 }}>
-                            <span style={{ padding: '3px 10px', borderRadius: 100, background: 'rgba(245,166,35,0.1)', color: '#f5a623', fontSize: 11, fontWeight: 700 }}>{post.category}</span>
+                            <span style={{ padding: '3px 10px', borderRadius: 100, background: 'rgba(26,125,60,0.1)', color: '#1a7d3c', fontSize: 11, fontWeight: 700 }}>{post.category}</span>
                             <span style={{ fontSize: 12, color: '#94a3b8', display: 'flex', alignItems: 'center', gap: 4 }}><FiCalendar size={11} /> {new Date(post.publishedAt || post.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                           </div>
-                          <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 17, fontWeight: 700, color: '#0d1b2e', marginBottom: 10, lineHeight: 1.35 }}>{post.title}</h2>
+                          <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 17, fontWeight: 700, color: '#0b3d24', marginBottom: 10, lineHeight: 1.35 }}>{post.title}</h2>
                           {post.excerpt && <p style={{ fontSize: 14, color: '#64748b', lineHeight: 1.7, marginBottom: 16 }}>{post.excerpt}</p>}
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <Link to={`/blog/${post.slug}`} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 600, color: '#0d1b2e' }}>Read More <FiArrowRight size={14} /></Link>
+                            <Link to={`/blog/${post.slug}`} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 600, color: '#0b3d24' }}>Read More <FiArrowRight size={14} /></Link>
                             <span style={{ fontSize: 12, color: '#94a3b8', display: 'flex', alignItems: 'center', gap: 4 }}><FiEye size={11} /> {post.views || 0}</span>
                           </div>
                         </div>
@@ -78,7 +78,7 @@ export default function BlogPage() {
                   {pages > 1 && (
                     <div style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
                       {[...Array(pages)].map((_, i) => (
-                        <button key={i} onClick={() => setPage(i + 1)} style={{ width: 38, height: 38, borderRadius: 8, border: `1px solid ${page === i + 1 ? '#0d1b2e' : '#e8ecf4'}`, background: page === i + 1 ? '#0d1b2e' : '#fff', color: page === i + 1 ? '#fff' : '#64748b', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>{i + 1}</button>
+                        <button key={i} onClick={() => setPage(i + 1)} style={{ width: 38, height: 38, borderRadius: 8, border: `1px solid ${page === i + 1 ? '#0b3d24' : '#e8ecf4'}`, background: page === i + 1 ? '#0b3d24' : '#fff', color: page === i + 1 ? '#fff' : '#64748b', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>{i + 1}</button>
                       ))}
                     </div>
                   )}

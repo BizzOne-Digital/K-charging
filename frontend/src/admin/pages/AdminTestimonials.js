@@ -49,7 +49,7 @@ export default function AdminTestimonials() {
     <div style={{ padding: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28 }}>
         <div>
-          <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0d1b2e', marginBottom: 4 }}>Testimonials</h1>
+          <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0b3d24', marginBottom: 4 }}>Testimonials</h1>
           <p style={{ color: '#94a3b8', fontSize: 14 }}>{testimonials.length} client reviews</p>
         </div>
         <button onClick={openAdd} className="btn btn-primary"><FiPlus size={16} /> Add Testimonial</button>
@@ -66,17 +66,17 @@ export default function AdminTestimonials() {
           <div key={t._id} style={{ background: '#fff', borderRadius: 16, border: '1px solid #e8ecf4', padding: 24 }}>
             <div style={{ display: 'flex', gap: 4, marginBottom: 12 }}>
               {[...Array(5)].map((_, i) => (
-                <FiStar key={i} size={14} fill={i < (t.rating || 5) ? '#f5a623' : 'transparent'} color={i < (t.rating || 5) ? '#f5a623' : '#e8ecf4'} />
+                <FiStar key={i} size={14} fill={i < (t.rating || 5) ? '#1a7d3c' : 'transparent'} color={i < (t.rating || 5) ? '#1a7d3c' : '#e8ecf4'} />
               ))}
             </div>
             <p style={{ fontSize: 14, color: '#475569', lineHeight: 1.7, marginBottom: 16, fontStyle: 'italic' }}>"{t.content}"</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
               {t.avatar
                 ? <img src={t.avatar} alt={t.name} style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover' }} />
-                : <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'linear-gradient(135deg, #0d1b2e, #f5a623)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: 16 }}>{t.name.charAt(0)}</div>
+                : <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'linear-gradient(135deg, #0b3d24, #1a7d3c)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: 16 }}>{t.name.charAt(0)}</div>
               }
               <div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: '#0d1b2e' }}>{t.name}</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: '#0b3d24' }}>{t.name}</div>
                 <div style={{ fontSize: 12, color: '#94a3b8' }}>{t.role}{t.company ? `, ${t.company}` : ''}</div>
               </div>
               <span style={{ marginLeft: 'auto', padding: '3px 10px', borderRadius: 100, fontSize: 11, fontWeight: 600, background: t.isActive ? 'rgba(34,197,94,0.1)' : 'rgba(148,163,184,0.1)', color: t.isActive ? '#22c55e' : '#94a3b8' }}>
@@ -100,7 +100,7 @@ export default function AdminTestimonials() {
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}>
           <div style={{ background: '#fff', borderRadius: 20, width: '100%', maxWidth: 560, maxHeight: '90vh', overflowY: 'auto' }}>
             <div style={{ padding: '24px 28px', borderBottom: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: '#fff', zIndex: 1 }}>
-              <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0d1b2e' }}>{editId ? 'Edit Testimonial' : 'Add Testimonial'}</h3>
+              <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0b3d24' }}>{editId ? 'Edit Testimonial' : 'Add Testimonial'}</h3>
               <button onClick={() => setShowModal(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#94a3b8' }}><FiX size={22} /></button>
             </div>
             <form onSubmit={handleSubmit} style={{ padding: '24px 28px' }}>

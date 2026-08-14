@@ -26,18 +26,18 @@ export default function AdminLogin() {
   return (
     <div style={{
       minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
-      background: 'linear-gradient(135deg, #070e1c 0%, #0d1b2e 50%, #111d35 100%)',
+      background: 'linear-gradient(135deg, #052414 0%, #0b3d24 50%, #0a3220 100%)',
       position: 'relative', overflow: 'hidden',
     }}>
       {/* Background effects */}
-      <div style={{ position: 'absolute', top: '20%', left: '15%', width: 300, height: 300, background: 'radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%)', borderRadius: '50%' }} />
-      <div style={{ position: 'absolute', bottom: '15%', right: '10%', width: 250, height: 250, background: 'radial-gradient(circle, rgba(61,127,255,0.06) 0%, transparent 70%)', borderRadius: '50%' }} />
+      <div style={{ position: 'absolute', top: '20%', left: '15%', width: 300, height: 300, background: 'radial-gradient(circle, rgba(26,125,60,0.08) 0%, transparent 70%)', borderRadius: '50%' }} />
+      <div style={{ position: 'absolute', bottom: '15%', right: '10%', width: 250, height: 250, background: 'radial-gradient(circle, rgba(47,158,85,0.06) 0%, transparent 70%)', borderRadius: '50%' }} />
 
       <div style={{ width: '100%', maxWidth: 420, padding: '0 24px', position: 'relative', zIndex: 1 }}>
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
-          <div style={{ width: 64, height: 64, background: '#f5a623', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
-            <span style={{ fontFamily: 'Space Grotesk', fontWeight: 800, fontSize: 32, color: '#0d1b2e' }}>K</span>
+          <div style={{ width: 64, height: 64, background: '#1a7d3c', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
+            <span style={{ fontFamily: 'Space Grotesk', fontWeight: 800, fontSize: 32, color: '#fff' }}>K</span>
           </div>
           <h1 style={{ fontFamily: 'Space Grotesk', color: '#fff', fontSize: 24, fontWeight: 700, marginBottom: 6 }}>Admin Portal</h1>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14 }}>K Charging Solutions</p>
@@ -56,7 +56,7 @@ export default function AdminLogin() {
                 <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
                   placeholder="admin@kchargingsolutions.com" required
                   style={{ width: '100%', padding: '13px 16px 13px 42px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10, color: '#fff', fontSize: 14, outline: 'none', fontFamily: 'Inter' }}
-                  onFocus={e => e.target.style.borderColor = '#f5a623'} onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+                  onFocus={e => e.target.style.borderColor = '#1a7d3c'} onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
               </div>
             </div>
 
@@ -67,7 +67,7 @@ export default function AdminLogin() {
                 <input type={showPass ? 'text' : 'password'} value={form.password} onChange={e => setForm({ ...form, password: e.target.value })}
                   placeholder="Enter password" required
                   style={{ width: '100%', padding: '13px 42px 13px 42px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10, color: '#fff', fontSize: 14, outline: 'none', fontFamily: 'Inter' }}
-                  onFocus={e => e.target.style.borderColor = '#f5a623'} onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+                  onFocus={e => e.target.style.borderColor = '#1a7d3c'} onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
                 <button type="button" onClick={() => setShowPass(!showPass)} style={{ position: 'absolute', right: 14, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: 'rgba(255,255,255,0.4)', cursor: 'pointer' }}>
                   {showPass ? <FiEyeOff size={16} /> : <FiEye size={16} />}
                 </button>
@@ -75,7 +75,7 @@ export default function AdminLogin() {
             </div>
 
             <button type="submit" disabled={loading} style={{
-              width: '100%', padding: '14px', background: '#f5a623', color: '#0d1b2e',
+              width: '100%', padding: '14px', background: '#1a7d3c', color: '#fff',
               border: 'none', borderRadius: 10, fontWeight: 700, fontSize: 15,
               cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.8 : 1,
               display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,

@@ -7,7 +7,7 @@ import { FiCalendar, FiUser, FiMail, FiPhone, FiBriefcase, FiMessageSquare, FiCh
 
 const inputStyle = {
   width: '100%', padding: '12px 16px', borderRadius: 10,
-  border: '1px solid #e8ecf4', fontSize: 15, color: '#0d1b2e',
+  border: '1px solid #e8ecf4', fontSize: 15, color: '#0b3d24',
   outline: 'none', fontFamily: 'Inter, sans-serif', background: '#fff',
   transition: 'border-color 0.2s',
 };
@@ -51,16 +51,16 @@ export default function BookingPage() {
       <Navbar />
       <div style={{ paddingTop: 76 }}>
         {/* Hero */}
-        <div style={{ background: 'linear-gradient(135deg, #070e1c, #0d1b2e)', padding: '64px 0', textAlign: 'center' }}>
+        <div style={{ background: 'linear-gradient(135deg, #052414, #0b3d24)', padding: '64px 0', textAlign: 'center' }}>
           <div className="container">
             <div className="section-label" style={{ margin: '0 auto 16px', justifyContent: 'center' }}>
-              <FiCalendar size={12} /> Book a Consultation
+              <FiCalendar size={12} /> Lease Your Property
             </div>
             <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(28px,4vw,46px)', color: '#fff', marginBottom: 16 }}>
-              Start Your EV Charging Journey
+              Get a Free Site Assessment
             </h1>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, maxWidth: 560, margin: '0 auto' }}>
-              Fill out the form below and our team will contact you within 24 hours with a customized proposal.
+              Fill out the form below and our team will contact you within 24 hours with a customized lease proposal — zero upfront cost.
             </p>
           </div>
         </div>
@@ -73,18 +73,18 @@ export default function BookingPage() {
                 <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'rgba(34,197,94,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
                   <FiCheck size={32} color="#22c55e" />
                 </div>
-                <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 28, color: '#0d1b2e', marginBottom: 12 }}>Booking Confirmed!</h2>
+                <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 28, color: '#0b3d24', marginBottom: 12 }}>Booking Confirmed!</h2>
                 <p style={{ color: '#64748b', fontSize: 16, lineHeight: 1.7 }}>
                   Thank you! Our team will reach out within 24 hours to schedule your free consultation and site assessment.
                 </p>
                 <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 32 }}>
                   <a href="/" className="btn btn-dark">Back to Home</a>
-                  <button onClick={() => { setSubmitted(false); setForm({ name:'',email:'',phone:'',company:'',service:'',propertyType:'',chargersNeeded:'',preferredDate:'',preferredTime:'',message:'' }); }} className="btn btn-outline" style={{ borderColor: '#0d1b2e', color: '#0d1b2e' }}>Book Another</button>
+                  <button onClick={() => { setSubmitted(false); setForm({ name:'',email:'',phone:'',company:'',service:'',propertyType:'',chargersNeeded:'',preferredDate:'',preferredTime:'',message:'' }); }} className="btn btn-outline" style={{ borderColor: '#0b3d24', color: '#0b3d24' }}>Book Another</button>
                 </div>
               </div>
             ) : (
               <div style={{ background: '#fff', borderRadius: 20, padding: 48, border: '1px solid #e8ecf4' }}>
-                <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 24, color: '#0d1b2e', marginBottom: 8 }}>Request a Free Consultation</h2>
+                <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 24, color: '#0b3d24', marginBottom: 8 }}>Request a Free Consultation</h2>
                 <p style={{ color: '#94a3b8', marginBottom: 36, fontSize: 14 }}>* Required fields</p>
 
                 <form onSubmit={handleSubmit}>
@@ -106,7 +106,7 @@ export default function BookingPage() {
                             onChange={handleChange}
                             placeholder={field.placeholder}
                             style={{ ...inputStyle, paddingLeft: 40 }}
-                            onFocus={e => e.target.style.borderColor = '#f5a623'}
+                            onFocus={e => e.target.style.borderColor = '#1a7d3c'}
                             onBlur={e => e.target.style.borderColor = '#e8ecf4'}
                           />
                         </div>
@@ -118,7 +118,7 @@ export default function BookingPage() {
                     <div>
                       <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Service Required *</label>
                       <select name="service" value={form.service} onChange={handleChange} style={{ ...inputStyle }} required
-                        onFocus={e => e.target.style.borderColor = '#f5a623'} onBlur={e => e.target.style.borderColor = '#e8ecf4'}>
+                        onFocus={e => e.target.style.borderColor = '#1a7d3c'} onBlur={e => e.target.style.borderColor = '#e8ecf4'}>
                         <option value="">Select a service...</option>
                         {services.map(s => <option key={s._id} value={s.title}>{s.title}</option>)}
                       </select>
@@ -126,7 +126,7 @@ export default function BookingPage() {
                     <div>
                       <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Property Type</label>
                       <select name="propertyType" value={form.propertyType} onChange={handleChange} style={{ ...inputStyle }}
-                        onFocus={e => e.target.style.borderColor = '#f5a623'} onBlur={e => e.target.style.borderColor = '#e8ecf4'}>
+                        onFocus={e => e.target.style.borderColor = '#1a7d3c'} onBlur={e => e.target.style.borderColor = '#e8ecf4'}>
                         <option value="">Select type...</option>
                         <option value="commercial">Commercial Building</option>
                         <option value="residential">Residential / Condo</option>
@@ -138,7 +138,7 @@ export default function BookingPage() {
                     <div>
                       <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Number of Chargers Needed</label>
                       <select name="chargersNeeded" value={form.chargersNeeded} onChange={handleChange} style={{ ...inputStyle }}
-                        onFocus={e => e.target.style.borderColor = '#f5a623'} onBlur={e => e.target.style.borderColor = '#e8ecf4'}>
+                        onFocus={e => e.target.style.borderColor = '#1a7d3c'} onBlur={e => e.target.style.borderColor = '#e8ecf4'}>
                         <option value="">Select range...</option>
                         <option value="1-5">1–5 chargers</option>
                         <option value="6-20">6–20 chargers</option>
@@ -150,7 +150,7 @@ export default function BookingPage() {
                     <div>
                       <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Preferred Date</label>
                       <input type="date" name="preferredDate" value={form.preferredDate} onChange={handleChange} style={{ ...inputStyle }}
-                        onFocus={e => e.target.style.borderColor = '#f5a623'} onBlur={e => e.target.style.borderColor = '#e8ecf4'} />
+                        onFocus={e => e.target.style.borderColor = '#1a7d3c'} onBlur={e => e.target.style.borderColor = '#e8ecf4'} />
                     </div>
                   </div>
 
@@ -161,7 +161,7 @@ export default function BookingPage() {
                     <textarea name="message" value={form.message} onChange={handleChange} rows={4}
                       placeholder="Tell us more about your project, property size, timeline, or any specific requirements..."
                       style={{ ...inputStyle, resize: 'vertical', minHeight: 110 }}
-                      onFocus={e => e.target.style.borderColor = '#f5a623'} onBlur={e => e.target.style.borderColor = '#e8ecf4'} />
+                      onFocus={e => e.target.style.borderColor = '#1a7d3c'} onBlur={e => e.target.style.borderColor = '#e8ecf4'} />
                   </div>
 
                   <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', fontSize: 16, padding: '16px' }} disabled={loading}>

@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { FiSave, FiSettings, FiPhone, FiMail, FiMapPin, FiFacebook, FiLinkedin, FiInstagram, FiTwitter, FiGlobe, FiUser, FiLock } from 'react-icons/fi';
 import { useAuth } from '../../context/AuthContext';
 
-const inputStyle = { width: '100%', padding: '11px 14px', borderRadius: 10, border: '1px solid #e8ecf4', fontSize: 14, outline: 'none', fontFamily: 'Inter', color: '#0d1b2e' };
+const inputStyle = { width: '100%', padding: '11px 14px', borderRadius: 10, border: '1px solid #e8ecf4', fontSize: 14, outline: 'none', fontFamily: 'Inter', color: '#0b3d24' };
 
 export default function AdminSettings() {
   const { user } = useAuth();
@@ -64,7 +64,7 @@ export default function AdminSettings() {
   return (
     <div style={{ padding: 32 }}>
       <div style={{ marginBottom: 28 }}>
-        <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0d1b2e', marginBottom: 4 }}>Settings</h1>
+        <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0b3d24', marginBottom: 4 }}>Settings</h1>
         <p style={{ color: '#94a3b8', fontSize: 14 }}>Manage website configuration and admin account</p>
       </div>
 
@@ -75,7 +75,7 @@ export default function AdminSettings() {
             <button key={t.id} onClick={() => setTab(t.id)} style={{
               display: 'flex', alignItems: 'center', gap: 10, width: '100%', padding: '11px 14px',
               borderRadius: 10, border: 'none', fontSize: 14, fontWeight: 500, cursor: 'pointer',
-              background: tab === t.id ? '#0d1b2e' : 'transparent',
+              background: tab === t.id ? '#0b3d24' : 'transparent',
               color: tab === t.id ? '#fff' : '#64748b',
               marginBottom: 4, transition: 'all 0.2s', textAlign: 'left',
             }}>
@@ -91,7 +91,7 @@ export default function AdminSettings() {
           {/* General */}
           {tab === 'general' && (
             <form onSubmit={saveSettings}>
-              <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0d1b2e', marginBottom: 24 }}>General Settings</h2>
+              <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0b3d24', marginBottom: 24 }}>General Settings</h2>
               <div style={{ marginBottom: 20 }}>
                 <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Site Name</label>
                 <input value={settings.siteName} onChange={e => setSettings({ ...settings, siteName: e.target.value })} style={inputStyle} />
@@ -109,7 +109,7 @@ export default function AdminSettings() {
           {/* Contact */}
           {tab === 'contact' && (
             <form onSubmit={saveSettings}>
-              <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0d1b2e', marginBottom: 24 }}>Contact Information</h2>
+              <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0b3d24', marginBottom: 24 }}>Contact Information</h2>
               {[
                 { key: 'phone', label: 'Phone Number', icon: FiPhone, placeholder: '+1 514 661 2494' },
                 { key: 'email', label: 'Email Address', icon: FiMail, placeholder: 'info@kchargingsolutions.com' },
@@ -132,7 +132,7 @@ export default function AdminSettings() {
           {/* Social */}
           {tab === 'social' && (
             <form onSubmit={saveSettings}>
-              <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0d1b2e', marginBottom: 24 }}>Social Media Links</h2>
+              <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0b3d24', marginBottom: 24 }}>Social Media Links</h2>
               {[
                 { key: 'facebook', label: 'Facebook', icon: FiFacebook, placeholder: 'https://facebook.com/kchargingsolutions' },
                 { key: 'linkedin', label: 'LinkedIn', icon: FiLinkedin, placeholder: 'https://linkedin.com/company/k-charging' },
@@ -156,7 +156,7 @@ export default function AdminSettings() {
           {/* Profile */}
           {tab === 'profile' && (
             <form onSubmit={saveProfile}>
-              <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0d1b2e', marginBottom: 24 }}>Admin Profile</h2>
+              <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0b3d24', marginBottom: 24 }}>Admin Profile</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
                 <div>
                   <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>

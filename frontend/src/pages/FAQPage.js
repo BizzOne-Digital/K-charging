@@ -5,21 +5,21 @@ import { Link } from 'react-router-dom';
 import { FiChevronDown, FiArrowRight } from 'react-icons/fi';
 
 const faqs = [
-  { category: 'General', q: 'What types of EV chargers do you install?', a: 'We install Level 2 AC chargers (ideal for workplaces and residential properties) and DC fast chargers (for high-traffic commercial locations). We work with all major brands including ChargePoint, Schneider Electric, Tesla, ABB, and more.' },
-  { category: 'General', q: 'Do you serve all of Canada?', a: 'Yes. K Charging Solutions operates across Canada. Contact us to discuss your specific location and project requirements.' },
-  { category: 'General', q: 'How do I get started?', a: 'Simply fill out our booking form for a free consultation. Our team will assess your property, discuss your needs, and provide a customized proposal within 48 hours.' },
-  { category: 'Installation', q: 'How long does installation take?', a: 'Most residential and small commercial installations are completed in 1 day. Larger commercial or fleet depot projects typically take 3–7 business days depending on electrical upgrades and site complexity.' },
-  { category: 'Installation', q: 'Do you handle permits and electrical work?', a: 'Yes. We manage everything — site assessment, electrical planning, permit applications, installation, commissioning, and final inspection. You do not need to coordinate with any other contractor.' },
-  { category: 'Installation', q: 'What electrical infrastructure do I need?', a: 'This depends on the number of chargers and charger type. We conduct a full electrical assessment during consultation and will recommend any necessary panel upgrades or load management solutions.' },
-  { category: 'Commercial', q: 'Can I monetize my EV charging stations?', a: 'Absolutely. We offer networked charging solutions that let you set pricing, accept payments, and generate monthly revenue reports. This is especially popular for commercial properties, hotels, and parking operators.' },
-  { category: 'Commercial', q: 'What is smart load management?', a: 'Smart load management distributes available electrical capacity across multiple chargers to prevent overloading your electrical system. This lets you install more chargers without requiring a costly electrical service upgrade.' },
-  { category: 'Commercial', q: 'Do you offer fleet charging solutions?', a: 'Yes. We design dedicated fleet charging depots with overnight scheduling, load optimization, and fleet analytics dashboards. We work with logistics companies, transit operators, and corporate fleets of all sizes.' },
-  { category: 'Support', q: 'What happens if a charger breaks down?', a: 'All our installations include remote monitoring. Most issues are detected and resolved remotely. For hardware issues, we dispatch a certified technician — response times depend on your maintenance plan.' },
-  { category: 'Support', q: 'Do you offer maintenance contracts?', a: 'Yes. We offer monthly and annual maintenance packages that include regular inspections, 24/7 remote monitoring, priority response, and preventive maintenance to maximize uptime.' },
-  { category: 'Incentives', q: 'Are there government incentives available?', a: 'Yes. Canada offers federal and provincial programs including the Zero Emission Vehicle Infrastructure Program (ZEVIP) and various provincial rebates. We assist clients in identifying and applying for all available incentives — often reducing project costs by 25–50%.' },
+  { category: 'Leasing', q: 'How does the site leasing model work?', a: 'We lease unused parking space from malls, supermarkets, and roadside businesses and install Tesla & FLO charging hubs on it at our own expense. In return, you receive steady lease income for the term of the agreement.' },
+  { category: 'Leasing', q: 'Does it cost anything to lease my property to you?', a: 'No. There is zero upfront cost to the property owner. We cover the hardware, installation, permits, and grid upgrades ourselves.' },
+  { category: 'Leasing', q: 'How much space do you need?', a: 'This depends on the number of stalls and charger type. During a free site assessment, we evaluate your property and recommend a phased rollout that scales with real EV demand.' },
+  { category: 'Hardware', q: 'What charging hardware do you use?', a: 'We procure, deploy, and own elite commercial charging hardware directly from Tesla and FLO — ensuring top reliability, fast charging speeds, and cross-vehicle compatibility.' },
+  { category: 'Hardware', q: 'Who owns and maintains the equipment?', a: 'We do. K Charging Solutions owns all installed hardware and is fully responsible for its maintenance, upgrades, and performance for the life of the lease.' },
+  { category: 'Installation', q: 'How long does installation take?', a: 'Our team handles all engineering, utility permits, site design, and electrical upgrades. Timelines vary by site complexity, but most installations are completed within a few weeks of the lease agreement.' },
+  { category: 'Installation', q: 'Do you handle permits and grid integration?', a: 'Yes. We manage everything — site assessment, electrical planning, permit applications, utility coordination, installation, and commissioning. You do not need to coordinate with any other contractor.' },
+  { category: 'Retail Benefit', q: 'How does this benefit my supermarket or mall?', a: 'High-speed charging hubs bring high-value EV drivers directly to your property, significantly increasing foot traffic, dwell time, and retail spend while their vehicle charges.' },
+  { category: 'Operations', q: 'What happens if a charger breaks down?', a: '24/7 proactive monitoring flags issues immediately, backed by a 98%+ uptime guarantee, a performance warranty, and priority maintenance response.' },
+  { category: 'Operations', q: 'How is billing and payment handled?', a: 'All payment processing runs through a PCI-compliant billing system for secure, reliable transactions — fully managed by us, with no involvement required from the property owner.' },
+  { category: 'Operations', q: 'What support do EV drivers get?', a: 'Drivers have access to a 24/7 toll-free support line, plus real-time station status and location listings on the FLO app and website.' },
+  { category: 'Other Sectors', q: 'Do you work with fleets, cities, and utilities?', a: 'Yes. We offer end-to-end fleet electrification with subsidy guidance, time-of-use and demand response programs for utilities, and curbside charging plus grant guidance (including the federal CFI program) for cities and municipalities.' },
 ];
 
-const categoryColors = { General: '#3d7fff', Installation: '#f5a623', Commercial: '#22c55e', Support: '#8b5cf6', Incentives: '#f59e0b' };
+const categoryColors = { Leasing: '#2f9e55', Hardware: '#1a7d3c', Installation: '#22c55e', 'Retail Benefit': '#8b5cf6', Operations: '#f59e0b', 'Other Sectors': '#0ea5e9' };
 
 export default function FAQPage() {
   const [open, setOpen] = useState(null);
@@ -31,11 +31,11 @@ export default function FAQPage() {
     <div>
       <Navbar />
       <div style={{ paddingTop: 76 }}>
-        <div style={{ background: 'linear-gradient(135deg, #070e1c, #0d1b2e)', padding: '72px 0', textAlign: 'center' }}>
+        <div style={{ background: 'linear-gradient(135deg, #052414, #0b3d24)', padding: '72px 0', textAlign: 'center' }}>
           <div className="container">
             <div className="section-label" style={{ margin: '0 auto 16px', justifyContent: 'center' }}>FAQ</div>
             <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(28px,4vw,48px)', color: '#fff', marginBottom: 16 }}>Frequently Asked Questions</h1>
-            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>Everything you need to know about EV charging installation, management, and support.</p>
+            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>Everything you need to know about our zero-CapEx site leasing model, Tesla & FLO hardware, and fully managed operations.</p>
           </div>
         </div>
         <section className="section reveal" style={{ background: '#f8f9fc' }}>
@@ -44,19 +44,19 @@ export default function FAQPage() {
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 36, justifyContent: 'center' }}>
               {cats.map(cat => (
                 <button key={cat} onClick={() => { setActiveCategory(cat); setOpen(null); }} style={{
-                  padding: '8px 20px', borderRadius: 100, border: `1px solid ${activeCategory === cat ? '#0d1b2e' : '#e8ecf4'}`,
-                  background: activeCategory === cat ? '#0d1b2e' : '#fff', color: activeCategory === cat ? '#fff' : '#64748b',
+                  padding: '8px 20px', borderRadius: 100, border: `1px solid ${activeCategory === cat ? '#0b3d24' : '#e8ecf4'}`,
+                  background: activeCategory === cat ? '#0b3d24' : '#fff', color: activeCategory === cat ? '#fff' : '#64748b',
                   fontSize: 13, fontWeight: 500, cursor: 'pointer',
                 }}>{cat}</button>
               ))}
             </div>
             {/* FAQ Items */}
             {filtered.map((faq, i) => (
-              <div key={i} style={{ background: '#fff', borderRadius: 12, marginBottom: 10, border: `1px solid ${open === i ? '#f5a623' : '#e8ecf4'}`, overflow: 'hidden', transition: 'border-color 0.2s' }}>
+              <div key={i} style={{ background: '#fff', borderRadius: 12, marginBottom: 10, border: `1px solid ${open === i ? '#1a7d3c' : '#e8ecf4'}`, overflow: 'hidden', transition: 'border-color 0.2s' }}>
                 <button onClick={() => setOpen(open === i ? null : i)} style={{ width: '100%', padding: '20px 24px', background: 'none', border: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', textAlign: 'left', gap: 16 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, flex: 1 }}>
                     <span style={{ width: 6, height: 6, borderRadius: '50%', background: categoryColors[faq.category] || '#94a3b8', flexShrink: 0 }} />
-                    <span style={{ fontSize: 15, fontWeight: 600, color: '#0d1b2e', lineHeight: 1.4 }}>{faq.q}</span>
+                    <span style={{ fontSize: 15, fontWeight: 600, color: '#0b3d24', lineHeight: 1.4 }}>{faq.q}</span>
                   </div>
                   <FiChevronDown size={18} style={{ flexShrink: 0, color: '#94a3b8', transition: 'transform 0.2s', transform: open === i ? 'rotate(180deg)' : 'none' }} />
                 </button>
@@ -66,7 +66,7 @@ export default function FAQPage() {
               </div>
             ))}
             {/* Still have questions CTA */}
-            <div style={{ marginTop: 48, background: '#0d1b2e', borderRadius: 16, padding: 36, textAlign: 'center' }}>
+            <div style={{ marginTop: 48, background: '#0b3d24', borderRadius: 16, padding: 36, textAlign: 'center' }}>
               <h3 style={{ fontFamily: 'Space Grotesk', color: '#fff', fontSize: 20, marginBottom: 10 }}>Still have questions?</h3>
               <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: 24, fontSize: 15 }}>Our team is happy to answer any specific questions about your project.</p>
               <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>

@@ -53,7 +53,7 @@ export default function AdminServices() {
     <div style={{ padding: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28 }}>
         <div>
-          <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0d1b2e', marginBottom: 4 }}>Services</h1>
+          <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 26, color: '#0b3d24', marginBottom: 4 }}>Services</h1>
           <p style={{ color: '#94a3b8', fontSize: 14 }}>{services.length} services configured</p>
         </div>
         <button onClick={openAdd} className="btn btn-primary">
@@ -67,7 +67,7 @@ export default function AdminServices() {
             {s.image && <img src={s.image} alt={s.title} style={{ width: '100%', height: 140, objectFit: 'cover' }} />}
             <div style={{ padding: 20 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
-                <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 16, color: '#0d1b2e', flex: 1 }}>{s.title}</h3>
+                <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 16, color: '#0b3d24', flex: 1 }}>{s.title}</h3>
                 <span style={{ padding: '3px 10px', borderRadius: 100, fontSize: 11, fontWeight: 600, background: s.isActive ? 'rgba(34,197,94,0.1)' : 'rgba(148,163,184,0.1)', color: s.isActive ? '#22c55e' : '#94a3b8', marginLeft: 8 }}>
                   {s.isActive ? 'Active' : 'Hidden'}
                 </span>
@@ -91,7 +91,7 @@ export default function AdminServices() {
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}>
           <div style={{ background: '#fff', borderRadius: 20, width: '100%', maxWidth: 640, maxHeight: '90vh', overflowY: 'auto' }}>
             <div style={{ padding: '24px 28px', borderBottom: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: '#fff', zIndex: 1 }}>
-              <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0d1b2e' }}>{editId ? 'Edit Service' : 'Add Service'}</h3>
+              <h3 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0b3d24' }}>{editId ? 'Edit Service' : 'Add Service'}</h3>
               <button onClick={() => setShowModal(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#94a3b8' }}><FiX size={22} /></button>
             </div>
             <form onSubmit={handleSubmit} style={{ padding: '24px 28px' }}>
@@ -118,7 +118,7 @@ export default function AdminServices() {
                       style={{ flex: 1, padding: '10px 14px', borderRadius: 10, border: '1px solid #e8ecf4', fontSize: 14, outline: 'none', fontFamily: 'Inter' }} />
                   </div>
                 ))}
-                <button type="button" onClick={() => setForm({ ...form, features: [...form.features, ''] })} style={{ fontSize: 13, color: '#3d7fff', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600 }}>
+                <button type="button" onClick={() => setForm({ ...form, features: [...form.features, ''] })} style={{ fontSize: 13, color: '#2f9e55', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600 }}>
                   + Add Feature
                 </button>
               </div>

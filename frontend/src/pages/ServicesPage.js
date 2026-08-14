@@ -13,14 +13,14 @@ export default function ServicesPage() {
     <div>
       <Navbar />
       <div style={{ paddingTop: 76 }}>
-        <div style={{ background: 'linear-gradient(135deg, #070e1c, #0d1b2e)', padding: '80px 0', textAlign: 'center' }}>
+        <div style={{ background: 'linear-gradient(135deg, #052414, #0b3d24)', padding: '80px 0', textAlign: 'center' }}>
           <div className="container">
             <div className="section-label" style={{ margin: '0 auto 16px', justifyContent: 'center' }}><FiZap size={12} /> Our Services</div>
             <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(28px,4vw,50px)', color: '#fff', marginBottom: 20 }}>
-              Complete EV Charging Solutions
+              A Zero-CapEx Charging Partnership
             </h1>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, maxWidth: 540, margin: '0 auto' }}>
-              Tailored EV charging infrastructure for every property type and business need.
+              From site leasing to Tesla & FLO hardware, installation to fully managed operations — everything is handled for you.
             </p>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function ServicesPage() {
                 <div key={service._id} style={{ background: '#fff', borderRadius: 20, padding: 36, border: '1px solid #e8ecf4', transition: 'all 0.3s' }}
                   onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)'; }}
                   onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}>
-                  <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 22, color: '#0d1b2e', marginBottom: 12 }}>{service.title}</h2>
+                  <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 22, color: '#0b3d24', marginBottom: 12 }}>{service.title}</h2>
                   <p style={{ color: '#64748b', lineHeight: 1.75, fontSize: 15, marginBottom: 20 }}>{service.description}</p>
                   {service.features?.map((f, fi) => (
                     <div key={fi} style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8 }}>
@@ -40,7 +40,7 @@ export default function ServicesPage() {
                   ))}
                   <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
                     <Link to="/booking" className="btn btn-primary" style={{ fontSize: 14, padding: '10px 20px' }}>Get a Quote</Link>
-                    <Link to={`/services/${service.slug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 600, color: '#0d1b2e', padding: '10px 0' }}>
+                    <Link to={`/services/${service.slug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 600, color: '#0b3d24', padding: '10px 0' }}>
                       Learn More <FiArrowRight size={14} />
                     </Link>
                   </div>
