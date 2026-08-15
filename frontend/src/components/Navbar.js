@@ -62,7 +62,7 @@ export default function Navbar() {
             <FiPhone size={15} /> +1 514 661 2494
           </a>
           <Link to="/booking" className="btn btn-primary" style={{ padding: '10px 20px', fontSize: 14 }}>
-            Book a Consultation
+            Book a Consultation.
           </Link>
         </div>
 
