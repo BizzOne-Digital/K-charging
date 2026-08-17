@@ -14,7 +14,7 @@ const features = [
   { icon: FiHome, label: 'Zero Upfront Cost' },
   { icon: FiZap, label: 'Tesla & FLO Hardware' },
   { icon: FiTool, label: 'Grid Integration' },
-  { icon: FiShield, label: 'FLO Authorized Partner' },
+  { icon: FiShield, label: 'B2B Property Partnerships' },
   { icon: FiClock, label: '24/7 Monitoring' },
   { icon: FiCreditCard, label: 'PCI-Compliant Billing' },
 ];
@@ -95,7 +95,7 @@ export default function HomePage() {
               }}>
                 <FiZap size={13} color="#1a7d3c" />
                 <span style={{ color: '#1a7d3c', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-                  FLO Authorized Partner
+                  Powered by Tesla & FLO
                 </span>
               </div>
 
@@ -277,7 +277,7 @@ export default function HomePage() {
               {[
                 { title: 'Zero Upfront Cost', desc: 'We cover hardware, installation, permits, and grid upgrades — no capital investment from you.' },
                 { title: 'Tesla & FLO Hardware', desc: 'We procure and own elite commercial charging hardware from industry leaders for top reliability and speed.' },
-                { title: 'Fully Managed Operations', desc: 'Network monitoring, payment processing, maintenance, and driver support — all handled for you.' },
+                { title: 'Fully Managed Operations', desc: 'Network monitoring, payment processing, and maintenance — all handled for you.' },
                 { title: 'More Customers, Longer Visits', desc: 'High-speed charging hubs bring affluent EV drivers to your property and increase dwell time and retail spend.' },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: 16, marginBottom: 24 }}>
@@ -365,7 +365,7 @@ export default function HomePage() {
               { step: '01', title: 'Site Assessment', desc: 'We evaluate your property, traffic, and grid capacity to design a phased rollout plan.' },
               { step: '02', title: 'Lease & Permits', desc: 'We sign a lease for the space and handle all engineering, permits, and utility coordination — at no cost to you.' },
               { step: '03', title: 'Installation', desc: 'Our team installs and commissions Tesla & FLO charging hardware with minimal disruption to your property.' },
-              { step: '04', title: 'Hands-Off Operations', desc: '24/7 monitoring, billing, maintenance, and driver support — you simply collect the lease income.' },
+              { step: '04', title: 'Hands-Off Operations', desc: '24/7 monitoring, billing, and maintenance — you simply collect the lease income.' },
             ].map((item, i) => (
               <div key={i} style={{ position: 'relative', padding: 28, borderRadius: 16, background: '#f8f9fc', border: '1px solid #e8ecf4' }}>
                 <div style={{ fontFamily: 'Space Grotesk', fontSize: 36, fontWeight: 800, color: 'rgba(26,125,60,0.3)', marginBottom: 12 }}>{item.step}</div>
@@ -377,14 +377,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== FLO PARTNER CAPABILITIES ===== */}
+      {/* ===== CHARGING PARTNER CAPABILITIES ===== */}
       <section className="section reveal" style={{ background: '#f8f9fc' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div className="section-label"><FiShield size={12} /> FLO Authorized Partner</div>
+            <div className="section-label"><FiShield size={12} /> Tesla & FLO Charging Partner</div>
             <h2 className="section-title">A Complete, Fully-Managed Charging Ecosystem</h2>
             <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              As a FLO Authorized Partner, we bring enterprise-grade network operations, software, billing, and support to every site we lease.
+              We bring enterprise-grade network operations, software, and billing to every site we lease — powered by Tesla & FLO hardware.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
@@ -392,7 +392,7 @@ export default function HomePage() {
               { icon: FiClock, title: 'Network Operations & Monitoring', desc: '24/7 proactive monitoring backed by a 98%+ uptime guarantee, plus a performance warranty with priority maintenance.' },
               { icon: FiCpu, title: 'Software & Management Tools', desc: 'A dedicated web portal for station management, patented energy management tools, and real-time station status on the FLO app.' },
               { icon: FiCreditCard, title: 'Payment & Billing', desc: 'PCI-compliant billing for secure, reliable payment processing on every transaction.' },
-              { icon: FiHeadphones, title: 'Driver Support', desc: 'A 24/7 toll-free support line so every EV driver gets help whenever they need it.' },
+              { icon: FiHeadphones, title: 'Business Support Line', desc: 'A dedicated support line for property owners, so any issue with your charging hub gets a fast response.' },
               { icon: FiMapPin, title: 'Visibility & Marketing', desc: 'Listing on the FLO app (iOS/Android) so drivers can find your stations — driving extra visibility and foot traffic.' },
               { icon: FiTool, title: 'Phased Rollout Planning', desc: 'Site assessment and phased infrastructure planning so your charging hub scales with real EV demand.' },
             ].map((item, i) => (

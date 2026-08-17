@@ -15,7 +15,7 @@ const faqs = [
   { category: 'Retail Benefit', q: 'How does this benefit my supermarket or mall?', a: 'High-speed charging hubs bring high-value EV drivers directly to your property, significantly increasing foot traffic, dwell time, and retail spend while their vehicle charges.' },
   { category: 'Operations', q: 'What happens if a charger breaks down?', a: '24/7 proactive monitoring flags issues immediately, backed by a 98%+ uptime guarantee, a performance warranty, and priority maintenance response.' },
   { category: 'Operations', q: 'How is billing and payment handled?', a: 'All payment processing runs through a PCI-compliant billing system for secure, reliable transactions — fully managed by us, with no involvement required from the property owner.' },
-  { category: 'Operations', q: 'What support do EV drivers get?', a: 'Drivers have access to a 24/7 toll-free support line, plus real-time station status and location listings on the FLO app and website.' },
+  { category: 'Operations', q: 'What support does the property owner get?', a: 'You get a dedicated business support line plus real-time station status, so any issue with your charging hub is flagged and resolved without you having to manage it.' },
   { category: 'Other Sectors', q: 'Do you work with fleets, cities, and utilities?', a: 'Yes. We offer end-to-end fleet electrification with subsidy guidance, time-of-use and demand response programs for utilities, and curbside charging plus grant guidance (including the federal CFI program) for cities and municipalities.' },
 ];
 

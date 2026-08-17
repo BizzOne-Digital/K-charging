@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -55,14 +55,8 @@ export default function Navbar() {
 
         {/* CTA */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }} className="desktop-nav">
-          <a href="tel:+15146612494" style={{
-            display: 'flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 500,
-            color: '#64748b'
-          }}>
-            <FiPhone size={15} /> +1 514 661 2494
-          </a>
           <Link to="/booking" className="btn btn-primary" style={{ padding: '10px 20px', fontSize: 14 }}>
-            Book a Consultation.
+            Book a Consultation
           </Link>
         </div>
 

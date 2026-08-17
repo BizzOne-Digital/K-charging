@@ -51,6 +51,7 @@ app.use('/api/blog', require('./routes/blog'));
 app.use('/api/contact', require('./routes/contact'));
 app.use('/api/settings', require('./routes/settings'));
 app.use('/api/upload', require('./routes/upload'));
+app.use('/api/jobs', require('./routes/jobs'));
 
 // Health check
 app.get('/', (req, res) => res.json({ message: 'K Charging Solutions API Running' }));

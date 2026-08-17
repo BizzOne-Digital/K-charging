@@ -16,6 +16,7 @@ import BlogPostPage from './pages/BlogPostPage';
 import FAQPage from './pages/FAQPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
+import CareersPage from './pages/CareersPage';
 
 // Admin Pages
 import AdminLogin from './admin/pages/AdminLogin';
@@ -27,6 +28,7 @@ import AdminTestimonials from './admin/pages/AdminTestimonials';
 import AdminBlog from './admin/pages/AdminBlog';
 import AdminMessages from './admin/pages/AdminMessages';
 import AdminSettings from './admin/pages/AdminSettings';
+import AdminCareers from './admin/pages/AdminCareers';
 import ProtectedRoute from './admin/components/ProtectedRoute';
 
 function App() {
@@ -47,6 +49,7 @@ function App() {
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/careers" element={<CareersPage />} />
 
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
@@ -58,6 +61,7 @@ function App() {
             <Route path="blog" element={<AdminBlog />} />
             <Route path="messages" element={<AdminMessages />} />
             <Route path="settings" element={<AdminSettings />} />
+            <Route path="careers" element={<AdminCareers />} />
           </Route>
         </Routes>
       </Router>

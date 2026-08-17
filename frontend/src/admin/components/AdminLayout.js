@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import {
   FiHome, FiCalendar, FiZap, FiStar, FiFileText,
   FiMessageSquare, FiSettings, FiLogOut, FiMenu, FiX,
-  FiExternalLink, FiChevronRight
+  FiExternalLink, FiChevronRight, FiBriefcase
 } from 'react-icons/fi';
 
 const navItems = [
@@ -13,6 +13,7 @@ const navItems = [
   { icon: FiZap, label: 'Services', path: '/admin/services' },
   { icon: FiStar, label: 'Testimonials', path: '/admin/testimonials' },
   { icon: FiFileText, label: 'Blog & News', path: '/admin/blog' },
+  { icon: FiBriefcase, label: 'Careers', path: '/admin/careers' },
   { icon: FiMessageSquare, label: 'Messages', path: '/admin/messages' },
   { icon: FiSettings, label: 'Settings', path: '/admin/settings' },
 ];

@@ -41,7 +41,7 @@ export default function Footer() {
               <img src="/primary_green.png" alt="K Charging Solutions" style={{ height: 34, width: 'auto' }} />
             </div>
             <p style={{ fontSize: 14, lineHeight: 1.7, marginBottom: 24 }}>
-              A FLO Authorized Partner leasing unused property for Tesla & FLO EV charging hubs — zero upfront cost, fully managed, steady lease income.
+              A B2B partner leasing unused property for Tesla & FLO EV charging hubs — zero upfront cost, fully managed, steady lease income.
             </p>
             <div style={{ display: 'flex', gap: 12 }}>
               {[FiFacebook, FiLinkedin, FiInstagram, FiTwitter].map((Icon, i) => (
@@ -71,7 +71,7 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h4 style={{ color: '#fff', fontSize: 15, fontWeight: 600, marginBottom: 20 }}>Company</h4>
-            {[{ label: 'About Us', to: '/about' }, { label: 'Blog & News', to: '/blog' }, { label: 'Testimonials', to: '/testimonials' }, { label: 'FAQ', to: '/faq' }, { label: 'Contact', to: '/contact' }, { label: 'Book a Consultation', to: '/booking' }].map(l => (
+            {[{ label: 'About Us', to: '/about' }, { label: 'Blog & News', to: '/blog' }, { label: 'Testimonials', to: '/testimonials' }, { label: 'FAQ', to: '/faq' }, { label: 'Careers', to: '/careers' }, { label: 'Contact', to: '/contact' }, { label: 'Book a Consultation', to: '/booking' }].map(l => (
               <Link key={l.to} to={l.to} style={{ display: 'block', fontSize: 14, marginBottom: 10, transition: 'color 0.2s' }}
               onMouseEnter={e => e.target.style.color = '#1a7d3c'}
               onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.75)'}

@@ -2,7 +2,12 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-import { FiCheck, FiArrowRight, FiZap, FiShield, FiGlobe } from 'react-icons/fi';
+import { FiCheck, FiArrowRight, FiZap, FiShield, FiGlobe, FiUsers } from 'react-icons/fi';
+
+const partners = [
+  { name: 'Basheeruddin Wohra', role: 'Partner' },
+  { name: 'Preet Kiran Walia', role: 'Partner' },
+];
 
 export default function AboutPage() {
   return (
@@ -16,7 +21,7 @@ export default function AboutPage() {
               Zero-CapEx EV Charging, Built for Property Owners
             </h1>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, maxWidth: 580, margin: '0 auto' }}>
-              K Charging Solutions is a FLO Authorized Partner that leases unused parking space from malls, supermarkets, and roadside businesses and turns it into Tesla & FLO fast-charging hubs — at zero upfront cost to the property owner.
+              K Charging Solutions leases unused parking space from malls, supermarkets, and roadside businesses and turns it into Tesla & FLO fast-charging hubs — at zero upfront cost to the property owner.
             </p>
           </div>
         </div>
@@ -30,9 +35,9 @@ export default function AboutPage() {
                   We believe EV infrastructure should cost property owners nothing and earn them something. Our mission is to accelerate the transition to electric mobility by leasing unused space and funding, installing, and operating premium Tesla & FLO charging hubs ourselves.
                 </p>
                 <p style={{ color: '#64748b', lineHeight: 1.8, fontSize: 16, marginBottom: 32 }}>
-                  From site leasing to installation, network operations to driver support — K Charging Solutions is your end-to-end, fully-managed partner in the electric future.
+                  From site leasing to installation, network operations to ongoing maintenance — K Charging Solutions is your end-to-end, fully-managed B2B partner in the electric future.
                 </p>
-                {['FLO Authorized Partner', 'Zero upfront cost to property owners', 'Tesla & FLO certified hardware ownership', '100% managed operations & maintenance'].map((item, i) => (
+                {['Tesla & FLO charging partner', 'Zero upfront cost to property owners', 'Tesla & FLO certified hardware ownership', '100% managed operations & maintenance'].map((item, i) => (
                   <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 12 }}>
                     <FiCheck size={16} color="#22c55e" />
                     <span style={{ fontSize: 15, color: '#374151', fontWeight: 500 }}>{item}</span>
@@ -47,7 +52,7 @@ export default function AboutPage() {
                   { icon: FiZap, title: 'Zero-CapEx', desc: 'We fund the hardware, installation, and grid upgrades — not you.' },
                   { icon: FiShield, title: 'Tesla & FLO', desc: 'Only certified, industry-leading commercial charging hardware.' },
                   { icon: FiGlobe, title: 'Scale', desc: 'From a single retail lot to multi-site regional rollouts.' },
-                  { icon: FiCheck, title: 'Support', desc: '24/7 monitoring, driver support, and rapid response maintenance.' },
+                  { icon: FiCheck, title: 'Support', desc: '24/7 monitoring and rapid response maintenance for every site.' },
                 ].map((item, i) => (
                   <div key={i} style={{ background: '#f8f9fc', border: '1px solid #e8ecf4', borderRadius: 16, padding: 24 }}>
                     <div style={{ width: 44, height: 44, borderRadius: 10, background: '#0b3d24', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
@@ -58,6 +63,31 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== PARTNERSHIP ===== */}
+        <section className="section reveal" style={{ background: '#f8f9fc' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: 48 }}>
+              <div className="section-label" style={{ margin: '0 auto 16px', justifyContent: 'center' }}><FiUsers size={12} /> Partnership</div>
+              <h2 className="section-title">Led By</h2>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24, maxWidth: 640, margin: '0 auto' }}>
+              {partners.map((p, i) => (
+                <div key={i} style={{ background: '#fff', border: '1px solid #e8ecf4', borderRadius: 16, padding: 28, textAlign: 'center' }}>
+                  <div style={{
+                    width: 56, height: 56, borderRadius: '50%', background: 'linear-gradient(135deg, #0b3d24, #1a7d3c)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px',
+                    color: '#fff', fontWeight: 700, fontSize: 20, fontFamily: 'Space Grotesk',
+                  }}>
+                    {p.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
+                  </div>
+                  <div style={{ fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: 17, color: '#0b3d24', marginBottom: 4 }}>{p.name}</div>
+                  <div style={{ fontSize: 14, color: '#64748b' }}>{p.role}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -74,7 +104,7 @@ export default function AboutPage() {
                 { value: '$0', label: 'Upfront Cost to Property Owners' },
                 { value: 'Tesla / FLO', label: 'Certified Charging Hardware' },
                 { value: '98%+', label: 'Uptime Across Managed Sites' },
-                { value: '24/7', label: 'Monitoring & Driver Support' },
+                { value: '24/7', label: 'Monitoring & Business Support' },
               ].map((item, i) => (
                 <div key={i} style={{ textAlign: 'center', padding: '24px 16px', borderRadius: 16, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
                   <div style={{ fontFamily: 'Space Grotesk', fontSize: 38, fontWeight: 800, color: '#1a7d3c', lineHeight: 1, marginBottom: 8 }}>{item.value}</div>
