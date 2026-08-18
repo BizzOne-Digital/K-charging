@@ -54,7 +54,7 @@ export default function BookingPage() {
         <div style={{ background: 'linear-gradient(135deg, #052414, #0b3d24)', padding: '64px 0', textAlign: 'center' }}>
           <div className="container">
             <div className="section-label" style={{ margin: '0 auto 16px', justifyContent: 'center' }}>
-              <FiCalendar size={12} /> Lease Your Property
+              <FiCalendar size={12} /> Book a Free Consultation
             </div>
             <h1 style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(28px,4vw,46px)', color: '#fff', marginBottom: 16 }}>
               Get a Free Site Assessment

@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import BrandIntroAnimation from '../components/BrandIntroAnimation';
 import api from '../utils/api';
 import {
   FiCalendar, FiArrowRight, FiCheck, FiStar, FiChevronDown,
   FiZap, FiShield, FiGlobe, FiClock, FiTrendingUp, FiCpu,
-  FiHome, FiTool, FiCreditCard, FiHeadphones, FiMapPin, FiTruck
+  FiHome, FiTool, FiCreditCard, FiHeadphones, FiMapPin, FiTruck, FiPlay
 } from 'react-icons/fi';
 import { MdElectricCar, MdOutlineElectricalServices } from 'react-icons/md';
 
@@ -124,7 +125,7 @@ export default function HomePage() {
 
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                 <Link to="/booking" className="btn btn-primary" style={{ fontSize: 15, padding: '14px 28px' }}>
-                  <FiCalendar size={16} /> Lease Your Property
+                  <FiCalendar size={16} /> Book a Free Consultation
                 </Link>
                 <Link to="/services" className="btn btn-outline" style={{ fontSize: 15, padding: '14px 28px' }}>
                   Explore Our Solutions <FiArrowRight size={16} />
@@ -201,6 +202,7 @@ export default function HomePage() {
       <style>{`
         @media(max-width:960px){ .services-grid{ grid-template-columns:repeat(2,1fr) !important; } }
         @media(max-width:640px){ .services-grid{ grid-template-columns:1fr !important; } }
+        @media(max-width:900px){ .story-grid{ grid-template-columns:1fr !important; } }
       `}</style>
 
       {/* ===== SERVICES ===== */}
@@ -444,6 +446,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== OUR STORY ANIMATION ===== */}
+      <section className="section reveal" style={{ background: '#052414' }}>
+        <div className="container">
+          <div className="story-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
+            <div>
+              <div className="section-label"><FiPlay size={12} /> Our Story</div>
+              <h2 style={{ fontSize: 'clamp(26px,4vw,40px)', fontFamily: 'Space Grotesk', fontWeight: 800, color: '#fff', marginBottom: 20, lineHeight: 1.15 }}>
+                Powering a Cleaner Tomorrow
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, marginBottom: 8, fontSize: 16 }}>
+                Every charging hub we build is a step toward cleaner air and a more sustainable future — for property owners, EV drivers, and the communities they serve.
+              </p>
+            </div>
+            <div>
+              <BrandIntroAnimation />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== CTA BANNER ===== */}
       <section style={{
         background: 'linear-gradient(135deg, #0b3d24 0%, #12522e 100%)',
@@ -462,7 +484,7 @@ export default function HomePage() {
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/booking" className="btn btn-primary" style={{ fontSize: 15, padding: '14px 28px' }}>
-              <FiCalendar size={16} /> Lease Your Property
+              <FiCalendar size={16} /> Book a Free Consultation
             </Link>
             <Link to="/contact" className="btn btn-outline" style={{ fontSize: 15, padding: '14px 28px' }}>
               Contact Us <FiArrowRight size={16} />
