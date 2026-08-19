@@ -60,11 +60,17 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h4 style={{ color: '#fff', fontSize: 15, fontWeight: 600, marginBottom: 20 }}>Services</h4>
-            {['Zero-CapEx Site Leasing', 'Premium Hardware: Tesla & FLO', 'End-to-End Installation & Grid Integration', 'Increased Foot Traffic & Dwell Time', 'Fully Managed Charging Operations'].map(s => (
-              <Link key={s} to="/services" style={{ display: 'block', fontSize: 14, marginBottom: 10, transition: 'color 0.2s' }}
+            {[
+              { label: 'Zero-CapEx Site Leasing', slug: 'zero-capex-site-leasing' },
+              { label: 'Premium Hardware: Tesla & FLO', slug: 'premium-hardware-tesla-flo' },
+              { label: 'End-to-End Installation & Grid Integration', slug: 'end-to-end-installation-grid-integration' },
+              { label: 'Increased Foot Traffic & Dwell Time', slug: 'increased-foot-traffic-dwell-time' },
+              { label: 'Fully Managed Charging Operations', slug: 'fully-managed-charging-operations' },
+            ].map(s => (
+              <Link key={s.slug} to={`/services/${s.slug}`} style={{ display: 'block', fontSize: 14, marginBottom: 10, transition: 'color 0.2s' }}
               onMouseEnter={e => e.target.style.color = '#1a7d3c'}
               onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.75)'}
-              >{s}</Link>
+              >{s.label}</Link>
             ))}
           </div>
 
