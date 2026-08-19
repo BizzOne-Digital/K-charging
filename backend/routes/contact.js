@@ -2,11 +2,39 @@ const express = require('express');
 const router = express.Router();
 const Contact = require('../models/Contact');
 const { protect } = require('../middleware/auth');
+const { sendMail } = require('../utils/mailer');
 
 router.post('/', async (req, res) => {
   try {
     const contact = await Contact.create(req.body);
     res.status(201).json({ message: 'Message sent successfully! We will respond within 24 hours.', contact });
+
+    sendMail({
+      to: process.env.ADMIN_EMAIL,
+      subject: `New Contact Message: ${contact.subject || 'Website Inquiry'}`,
+      replyTo: contact.email,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${contact.name}</p>
+        <p><strong>Email:</strong> ${contact.email}</p>
+        <p><strong>Phone:</strong> ${contact.phone || '-'}</p>
+        <p><strong>Subject:</strong> ${contact.subject || '-'}</p>
+        <p><strong>Message:</strong></p>
+        <p>${contact.message}</p>
+      `,
+    });
+
+    if (contact.email) {
+      sendMail({
+        to: contact.email,
+        subject: 'We received your message — K Charging Solutions',
+        html: `
+          <p>Hi ${contact.name},</p>
+          <p>Thanks for reaching out to K Charging Solutions. We've received your message and will respond within 24 hours.</p>
+          <p>— The K Charging Solutions Team</p>
+        `,
+      });
+    }
   } catch (err) { res.status(500).json({ message: err.message }); }
 });
 

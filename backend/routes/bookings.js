@@ -2,12 +2,42 @@ const express = require('express');
 const router = express.Router();
 const Booking = require('../models/Booking');
 const { protect } = require('../middleware/auth');
+const { sendMail } = require('../utils/mailer');
 
 // POST create booking (public)
 router.post('/', async (req, res) => {
   try {
     const booking = await Booking.create(req.body);
     res.status(201).json({ message: 'Booking submitted successfully! We will contact you within 24 hours.', booking });
+
+    sendMail({
+      to: process.env.ADMIN_EMAIL,
+      subject: `New Booking Request: ${booking.name}`,
+      replyTo: booking.email,
+      html: `
+        <h2>New Consultation Booking</h2>
+        <p><strong>Name:</strong> ${booking.name}</p>
+        <p><strong>Email:</strong> ${booking.email}</p>
+        <p><strong>Phone:</strong> ${booking.phone || '-'}</p>
+        <p><strong>Company:</strong> ${booking.company || '-'}</p>
+        <p><strong>Service:</strong> ${booking.service || '-'}</p>
+        <p><strong>Property Type:</strong> ${booking.propertyType || '-'}</p>
+        <p><strong>Message:</strong></p>
+        <p>${booking.message || '-'}</p>
+      `,
+    });
+
+    if (booking.email) {
+      sendMail({
+        to: booking.email,
+        subject: 'Booking Confirmed — K Charging Solutions',
+        html: `
+          <p>Hi ${booking.name},</p>
+          <p>Thanks for booking a free consultation with K Charging Solutions. Our team will contact you within 24 hours to schedule your site assessment.</p>
+          <p>— The K Charging Solutions Team</p>
+        `,
+      });
+    }
   } catch (err) { res.status(500).json({ message: err.message }); }
 });
 
