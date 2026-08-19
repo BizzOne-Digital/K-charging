@@ -11,7 +11,7 @@ export default function AdminSettings() {
   const [tab, setTab] = useState('general');
   const [settings, setSettings] = useState({
     siteName: 'K Charging Solutions', siteTagline: 'Smart. Reliable. Future-Ready.',
-    phone: '+1 514 661 2494', email: 'info@kchargingsolutions.com', address: 'Canada',
+    phone: '+1 514 661 2494', email: 'info@kchargingsolutions.com', address: 'Montreal, Canada',
     facebook: '', linkedin: '', instagram: '', twitter: '',
   });
   const [profile, setProfile] = useState({ name: user?.name || '', email: user?.email || '', currentPassword: '', newPassword: '', confirmPassword: '' });

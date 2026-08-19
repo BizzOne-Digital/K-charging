@@ -93,7 +93,7 @@ export default function Footer() {
               ><FiMail size={15} style={{ color: '#1a7d3c', flexShrink: 0 }} /> info@kchargingsolutions.com</a>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 14 }}>
                 <FiMapPin size={15} style={{ color: '#1a7d3c', marginTop: 2, flexShrink: 0 }} />
-                <span>Canada</span>
+                <span>Montreal, Canada</span>
               </div>
             </div>
           </div>

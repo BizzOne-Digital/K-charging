@@ -47,7 +47,7 @@ export default function CareersPage() {
                 <p style={{ color: '#64748b', fontSize: 15 }}>
                   We're not actively hiring at the moment, but we're always open to hearing from great people.
                   Send your resume to{' '}
-                  <a href="mailto:careers@kchargingsolutions.com" style={{ color: '#1a7d3c', fontWeight: 600 }}>careers@kchargingsolutions.com</a>.
+                  <a href="mailto:info@kchargingsolutions.com" style={{ color: '#1a7d3c', fontWeight: 600 }}>info@kchargingsolutions.com</a>.
                 </p>
               </div>
             )}
@@ -76,7 +76,7 @@ export default function CareersPage() {
                         </div>
                       </div>
                       <a
-                        href={`mailto:careers@kchargingsolutions.com?subject=${encodeURIComponent('Application: ' + job.title)}`}
+                        href={`mailto:info@kchargingsolutions.com?subject=${encodeURIComponent('Application: ' + job.title)}`}
                         className="btn btn-primary"
                         style={{ fontSize: 14, padding: '10px 20px', flexShrink: 0 }}
                       >

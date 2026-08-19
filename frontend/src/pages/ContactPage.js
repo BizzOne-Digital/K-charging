@@ -45,7 +45,7 @@ export default function ContactPage() {
                 {[
                   { icon: FiPhone, label: 'Phone', value: '+1 514 661 2494', href: 'tel:+15146612494' },
                   { icon: FiMail, label: 'Email', value: 'info@kchargingsolutions.com', href: 'mailto:info@kchargingsolutions.com' },
-                  { icon: FiMapPin, label: 'Location', value: 'Canada', href: '#' },
+                  { icon: FiMapPin, label: 'Location', value: 'Montreal, Canada', href: '#' },
                 ].map((item, i) => (
                   <div key={i} style={{ display: 'flex', gap: 16, marginBottom: 28 }}>
                     <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(26,125,60,0.1)', border: '1px solid rgba(26,125,60,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
