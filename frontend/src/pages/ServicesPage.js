@@ -7,7 +7,10 @@ import { FiCheck, FiArrowRight, FiZap } from 'react-icons/fi';
 
 export default function ServicesPage() {
   const [services, setServices] = useState([]);
-  useEffect(() => { api.get('/services').then(r => setServices(r.data)).catch(() => {}); }, []);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    api.get('/services').then(r => setServices(r.data)).catch(() => {}).finally(() => setLoading(false));
+  }, []);
 
   return (
     <div>
@@ -27,7 +30,17 @@ export default function ServicesPage() {
         <section className="section reveal" style={{ background: '#f8f9fc' }}>
           <div className="container">
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 28 }}>
-              {services.map(service => (
+              {loading && [...Array(5)].map((_, i) => (
+                <div key={i} style={{ background: '#fff', borderRadius: 20, padding: 36, border: '1px solid #e8ecf4' }}>
+                  <div className="skeleton" style={{ width: '60%', height: 24, borderRadius: 6, marginBottom: 16 }} />
+                  <div className="skeleton" style={{ width: '100%', height: 14, borderRadius: 6, marginBottom: 8 }} />
+                  <div className="skeleton" style={{ width: '90%', height: 14, borderRadius: 6, marginBottom: 20 }} />
+                  <div className="skeleton" style={{ width: '70%', height: 14, borderRadius: 6, marginBottom: 8 }} />
+                  <div className="skeleton" style={{ width: '55%', height: 14, borderRadius: 6, marginBottom: 24 }} />
+                  <div className="skeleton" style={{ width: 120, height: 36, borderRadius: 8 }} />
+                </div>
+              ))}
+              {!loading && services.map(service => (
                 <div key={service._id} style={{ background: '#fff', borderRadius: 20, padding: 36, border: '1px solid #e8ecf4', transition: 'all 0.3s' }}
                   onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)'; }}
                   onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}>

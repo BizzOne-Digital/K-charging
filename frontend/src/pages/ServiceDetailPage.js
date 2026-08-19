@@ -8,8 +8,56 @@ import { FiCheck, FiArrowRight } from 'react-icons/fi';
 export default function ServiceDetailPage() {
   const { slug } = useParams();
   const [service, setService] = useState(null);
-  useEffect(() => { api.get(`/services/${slug}`).then(r => setService(r.data)).catch(() => {}); }, [slug]);
-  if (!service) return <div style={{display:'flex',alignItems:'center',justifyContent:'center',minHeight:'100vh'}}><div>Loading...</div></div>;
+  const [notFound, setNotFound] = useState(false);
+
+  useEffect(() => {
+    setService(null);
+    setNotFound(false);
+    api.get(`/services/${slug}`).then(r => setService(r.data)).catch(() => setNotFound(true));
+  }, [slug]);
+
+  if (notFound) {
+    return (
+      <div>
+        <Navbar />
+        <div style={{ paddingTop: 76, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '80vh', flexDirection: 'column', gap: 16 }}>
+          <p style={{ color: '#94a3b8' }}>Service not found.</p>
+          <Link to="/services" className="btn btn-dark">Back to Services</Link>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!service) {
+    return (
+      <div>
+        <Navbar />
+        <div style={{ paddingTop: 76 }}>
+          <div style={{ background: 'linear-gradient(135deg,#052414,#0b3d24)', padding: '80px 0' }}>
+            <div className="container">
+              <div className="skeleton" style={{ width: '55%', height: 42, borderRadius: 8, marginBottom: 16, opacity: 0.15 }} />
+              <div className="skeleton" style={{ width: '75%', height: 18, borderRadius: 6, opacity: 0.15 }} />
+            </div>
+          </div>
+          <section className="section">
+            <div className="container" style={{ maxWidth: 800 }}>
+              <div className="skeleton" style={{ width: '100%', height: 16, borderRadius: 6, marginBottom: 10 }} />
+              <div className="skeleton" style={{ width: '90%', height: 16, borderRadius: 6, marginBottom: 32 }} />
+              <div style={{ background: '#f8f9fc', borderRadius: 16, padding: 32 }}>
+                <div className="skeleton" style={{ width: '30%', height: 20, borderRadius: 6, marginBottom: 20 }} />
+                {[...Array(4)].map((_, i) => (
+                  <div key={i} className="skeleton" style={{ width: `${70 - i * 8}%`, height: 14, borderRadius: 6, marginBottom: 12 }} />
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div><Navbar />
       <div style={{paddingTop:76}}>
