@@ -7,13 +7,26 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:3000')
-  .split(',')
-  .map(o => o.trim());
+const normalizeOrigin = (o) => o.trim().replace(/\/$/, '').toLowerCase();
+
+const allowedOrigins = new Set(
+  (process.env.CLIENT_URL || 'http://localhost:3000')
+    .split(',')
+    .map(normalizeOrigin)
+    .flatMap(o => {
+      // Auto-allow the www/non-www variant of each configured origin
+      if (o.includes('://www.')) return [o, o.replace('://www.', '://')];
+      return [o, o.replace('://', '://www.')];
+    })
+);
 
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    if (!origin) return callback(null, true);
+    const normalized = normalizeOrigin(origin);
+    if (allowedOrigins.has(normalized) || normalized.endsWith('.vercel.app')) {
+      return callback(null, true);
+    }
     callback(new Error('Not allowed by CORS'));
   },
   credentials: true,
