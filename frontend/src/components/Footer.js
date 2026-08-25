@@ -46,7 +46,7 @@ export default function Footer() {
             <div style={{ display: 'flex', gap: 12 }}>
               {[
                 { Icon: FiFacebook, href: 'https://www.facebook.com/share/1HWqnxT21m/?mibextid=wwXIfr' },
-                { Icon: FiLinkedin, href: '#' },
+                { Icon: FiLinkedin, href: 'https://www.linkedin.com/company/k-charging-solutions/' },
                 { Icon: FiInstagram, href: 'https://www.instagram.com/k.chargingsolutions?igsi=MnM0cHN3c2ZzYzZj&utm_source=qr' },
                 { Icon: FiTwitter, href: '#' },
               ].map(({ Icon, href }, i) => (
