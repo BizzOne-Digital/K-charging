@@ -11,7 +11,7 @@ export default function AdminSettings() {
   const [tab, setTab] = useState('general');
   const [settings, setSettings] = useState({
     siteName: 'K Charging Solutions', siteTagline: 'Smart. Reliable. Future-Ready.',
-    phone: '+1 514 661 2494', email: 'info@kchargingsolutions.com', address: 'Montreal, Canada',
+    phone: '+1 (438) 765-6550', email: 'info@kchargingsolutions.com', address: 'Montreal, Canada',
     facebook: '', linkedin: '', instagram: '', twitter: '',
   });
   const [profile, setProfile] = useState({ name: user?.name || '', email: user?.email || '', currentPassword: '', newPassword: '', confirmPassword: '' });
@@ -111,7 +111,7 @@ export default function AdminSettings() {
             <form onSubmit={saveSettings}>
               <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 18, color: '#0b3d24', marginBottom: 24 }}>Contact Information</h2>
               {[
-                { key: 'phone', label: 'Phone Number', icon: FiPhone, placeholder: '+1 514 661 2494' },
+                { key: 'phone', label: 'Phone Number', icon: FiPhone, placeholder: '+1 (438) 765-6550' },
                 { key: 'email', label: 'Email Address', icon: FiMail, placeholder: 'info@kchargingsolutions.com' },
                 { key: 'address', label: 'Address / Location', icon: FiMapPin, placeholder: 'City, Province, Canada' },
               ].map(field => (

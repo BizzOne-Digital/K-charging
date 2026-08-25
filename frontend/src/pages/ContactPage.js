@@ -43,7 +43,7 @@ export default function ContactPage() {
               {/* Info */}
               <div>
                 {[
-                  { icon: FiPhone, label: 'Phone', value: '+1 514 661 2494', href: 'tel:+15146612494' },
+                  { icon: FiPhone, label: 'Phone', value: '+1 (438) 765-6550', href: 'tel:+14387656550' },
                   { icon: FiMail, label: 'Email', value: 'info@kchargingsolutions.com', href: 'mailto:info@kchargingsolutions.com' },
                   { icon: FiMapPin, label: 'Location', value: 'Montreal, Canada', href: '#' },
                 ].map((item, i) => (

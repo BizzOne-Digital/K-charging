@@ -71,7 +71,7 @@ export default function FAQPage() {
               <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: 24, fontSize: 15 }}>Our team is happy to answer any specific questions about your project.</p>
               <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Link to="/contact" className="btn btn-primary">Contact Us <FiArrowRight size={15}/></Link>
-                <a href="tel:+15146612494" className="btn btn-outline">+1 514 661 2494</a>
+                <a href="tel:+14387656550" className="btn btn-outline">+1 (438) 765-6550</a>
               </div>
             </div>
           </div>

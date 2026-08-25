@@ -27,7 +27,7 @@ export default function Footer() {
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/booking" className="btn btn-primary">Get a Free Assessment</Link>
-            <a href="tel:+15146612494" className="btn btn-outline">+1 514 661 2494</a>
+            <a href="tel:+14387656550" className="btn btn-outline">+1 (438) 765-6550</a>
           </div>
         </div>
       </div>
@@ -44,8 +44,13 @@ export default function Footer() {
               A B2B partner leasing unused property for Tesla & FLO EV charging hubs — zero upfront cost, fully managed, steady lease income.
             </p>
             <div style={{ display: 'flex', gap: 12 }}>
-              {[FiFacebook, FiLinkedin, FiInstagram, FiTwitter].map((Icon, i) => (
-                <a key={i} href="#" style={{
+              {[
+                { Icon: FiFacebook, href: 'https://www.facebook.com/share/1HWqnxT21m/?mibextid=wwXIfr' },
+                { Icon: FiLinkedin, href: '#' },
+                { Icon: FiInstagram, href: 'https://www.instagram.com/k.chargingsolutions?igsi=MnM0cHN3c2ZzYzZj&utm_source=qr' },
+                { Icon: FiTwitter, href: '#' },
+              ].map(({ Icon, href }, i) => (
+                <a key={i} href={href} target="_blank" rel="noopener noreferrer" style={{
                   width: 36, height: 36, borderRadius: 8, border: '1px solid rgba(255,255,255,0.1)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   color: 'rgba(255,255,255,0.5)', transition: 'all 0.2s'
@@ -89,10 +94,10 @@ export default function Footer() {
           <div>
             <h4 style={{ color: '#fff', fontSize: 15, fontWeight: 600, marginBottom: 20 }}>Contact Us</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              <a href="tel:+15146612494" style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 14, transition: 'color 0.2s' }}
+              <a href="tel:+14387656550" style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 14, transition: 'color 0.2s' }}
               onMouseEnter={e => e.currentTarget.style.color = '#1a7d3c'}
               onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.75)'}
-              ><FiPhone size={15} style={{ color: '#1a7d3c', flexShrink: 0 }} /> +1 514 661 2494</a>
+              ><FiPhone size={15} style={{ color: '#1a7d3c', flexShrink: 0 }} /> +1 (438) 765-6550</a>
               <a href="mailto:info@kchargingsolutions.com" style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 14, transition: 'color 0.2s' }}
               onMouseEnter={e => e.currentTarget.style.color = '#1a7d3c'}
               onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.75)'}
