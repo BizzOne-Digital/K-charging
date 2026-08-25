@@ -7,9 +7,11 @@ const { sendMail } = require('../utils/mailer');
 router.post('/', async (req, res) => {
   try {
     const contact = await Contact.create(req.body);
-    res.status(201).json({ message: 'Message sent successfully! We will respond within 24 hours.', contact });
 
-    sendMail({
+    // Await email sends before responding — on Vercel's serverless runtime, the
+    // function can be frozen/torn down right after the response is sent, which
+    // would silently kill any un-awaited "fire-and-forget" work still in flight.
+    await sendMail({
       to: process.env.NOTIFY_EMAIL || process.env.ADMIN_EMAIL,
       subject: `New Contact Message: ${contact.subject || 'Website Inquiry'}`,
       replyTo: contact.email,
@@ -25,7 +27,7 @@ router.post('/', async (req, res) => {
     });
 
     if (contact.email) {
-      sendMail({
+      await sendMail({
         to: contact.email,
         subject: 'We received your message — K Charging Solutions',
         html: `
@@ -35,6 +37,8 @@ router.post('/', async (req, res) => {
         `,
       });
     }
+
+    res.status(201).json({ message: 'Message sent successfully! We will respond within 24 hours.', contact });
   } catch (err) { res.status(500).json({ message: err.message }); }
 });
 
