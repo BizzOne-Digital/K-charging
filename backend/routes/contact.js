@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
     res.status(201).json({ message: 'Message sent successfully! We will respond within 24 hours.', contact });
 
     sendMail({
-      to: process.env.ADMIN_EMAIL,
+      to: process.env.NOTIFY_EMAIL || process.env.ADMIN_EMAIL,
       subject: `New Contact Message: ${contact.subject || 'Website Inquiry'}`,
       replyTo: contact.email,
       html: `

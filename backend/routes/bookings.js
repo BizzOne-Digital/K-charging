@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     res.status(201).json({ message: 'Booking submitted successfully! We will contact you within 24 hours.', booking });
 
     sendMail({
-      to: process.env.ADMIN_EMAIL,
+      to: process.env.NOTIFY_EMAIL || process.env.ADMIN_EMAIL,
       subject: `New Booking Request: ${booking.name}`,
       replyTo: booking.email,
       html: `
